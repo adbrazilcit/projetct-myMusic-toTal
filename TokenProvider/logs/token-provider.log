@@ -1,0 +1,61 @@
+2022-07-05 17:41:37,532 INFO org.springframework.boot.StartupInfoLogger [main] Starting TokenProviderApplication using Java 11.0.15 on lnb035768cps with PID 124843 (/home/andreus/tc-hbtn-design-patterns/projetct-myMusic-toTal/TokenProvider/target/classes started by CIANDT\andreus in /home/andreus/tc-hbtn-design-patterns/projetct-myMusic-toTal/TokenProvider)
+2022-07-05 17:41:37,542 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2022-07-05 17:41:38,725 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2022-07-05 17:41:38,739 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2022-07-05 17:41:38,740 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2022-07-05 17:41:38,741 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-07-05 17:41:38,841 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2022-07-05 17:41:38,843 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1228 ms
+2022-07-05 17:41:39,355 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [main] Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-07-05 17:41:39,372 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2022-07-05 17:41:39,381 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-05 17:41:39,393 INFO org.springframework.boot.StartupInfoLogger [main] Started TokenProviderApplication in 2.374 seconds (JVM running for 2.936)
+2022-07-05 17:43:46,009 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-05 17:43:46,009 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-07-05 17:43:46,013 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 4 ms
+2022-07-05 17:43:46,025 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8080-exec-1] Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'text/plain' not supported]
+2022-07-05 17:44:13,217 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8080-exec-3] Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'text/plain' not supported]
+2022-07-05 17:44:17,708 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8080-exec-4] Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'text/plain' not supported]
+2022-07-05 17:44:27,011 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8080-exec-5] Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'text/plain' not supported]
+2022-07-05 17:44:27,739 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8080-exec-6] Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'text/plain' not supported]
+2022-07-05 17:45:10,589 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8080-exec-7] Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'text/plain' not supported]
+2022-07-05 17:45:50,297 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8080-exec-8] Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'text/plain' not supported]
+2022-07-05 17:45:51,282 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8080-exec-9] Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'text/plain' not supported]
+2022-07-05 17:45:52,208 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8080-exec-10] Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'text/plain' not supported]
+2022-07-05 17:45:52,923 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8080-exec-2] Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'text/plain' not supported]
+2022-07-05 17:46:16,313 ERROR com.ciandt.token.provider.controllers.TokenController [http-nio-8080-exec-1] Erro na requisição: null
+2022-07-05 17:46:17,206 ERROR com.ciandt.token.provider.controllers.TokenController [http-nio-8080-exec-4] Erro na requisição: null
+2022-07-05 17:46:21,372 ERROR com.ciandt.token.provider.controllers.TokenController [http-nio-8080-exec-6] Erro na requisição: null
+2022-07-05 17:46:50,744 ERROR com.ciandt.token.provider.controllers.TokenController [http-nio-8080-exec-8] Erro na requisição: null
+2022-07-05 17:47:31,835 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8080-exec-10] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unrecognized token 'BODY': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false'); nested exception is com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'BODY': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')<EOL> at [Source: (PushbackInputStream); line: 1, column: 6]]
+2022-07-05 17:47:32,642 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8080-exec-1] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unrecognized token 'BODY': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false'); nested exception is com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'BODY': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')<EOL> at [Source: (PushbackInputStream); line: 1, column: 6]]
+2022-07-05 17:47:36,466 INFO com.ciandt.token.provider.controllers.TokenController [http-nio-8080-exec-4] Recebido requisição para criação de token para chave: fulano
+2022-07-05 17:47:36,498 INFO com.ciandt.token.provider.controllers.TokenController [http-nio-8080-exec-4] Token gerado com sucesso
+2022-07-05 17:49:04,000 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8080-exec-6] Recebido requisição para geração de token: fulano
+2022-07-05 17:49:04,003 ERROR com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8080-exec-6] Requisição inválida: Token expirado
+2022-07-05 17:49:08,413 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8080-exec-9] Recebido requisição para geração de token: fulano
+2022-07-05 17:49:08,415 ERROR com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8080-exec-9] Requisição inválida: Token expirado
+2022-07-05 17:49:09,148 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8080-exec-10] Recebido requisição para geração de token: fulano
+2022-07-05 17:49:09,150 ERROR com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8080-exec-10] Requisição inválida: Token expirado
+2022-07-05 17:49:18,261 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8080-exec-3] Recebido requisição para geração de token: fulano
+2022-07-05 17:49:18,263 ERROR com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8080-exec-3] Requisição inválida: Token expirado
+2022-07-05 17:49:56,940 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8080-exec-5] Recebido requisição para geração de token: fulano
+2022-07-05 17:49:56,941 ERROR com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8080-exec-5] Requisição inválida: Token expirado
+2022-07-05 17:49:57,893 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8080-exec-6] Recebido requisição para geração de token: fulano
+2022-07-05 17:49:57,895 ERROR com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8080-exec-6] Requisição inválida: Token expirado
+2022-07-05 17:50:10,430 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8080-exec-9] Recebido requisição para geração de token: fulano
+2022-07-05 17:50:10,431 ERROR com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8080-exec-9] Requisição inválida: Token expirado
+2022-07-05 17:50:36,271 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8080-exec-10] Recebido requisição para geração de token: fulano
+2022-07-05 17:50:36,273 ERROR com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8080-exec-10] Requisição inválida: Token expirado
+2022-07-05 17:51:31,451 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8080-exec-3] Recebido requisição para geração de token: fulano
+2022-07-05 17:51:31,452 ERROR com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8080-exec-3] Requisição inválida: Token expirado
+2022-07-05 17:51:54,865 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8080-exec-5] Recebido requisição para geração de token: fulano
+2022-07-05 17:51:54,866 ERROR com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8080-exec-5] Requisição inválida: Token expirado
+2022-07-05 17:51:55,725 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8080-exec-6] Recebido requisição para geração de token: fulano
+2022-07-05 17:51:55,726 ERROR com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8080-exec-6] Requisição inválida: Token expirado
+2022-07-05 17:52:16,988 INFO com.ciandt.token.provider.controllers.TokenController [http-nio-8080-exec-9] Recebido requisição para criação de token para chave: fulano
+2022-07-05 17:52:16,989 INFO com.ciandt.token.provider.controllers.TokenController [http-nio-8080-exec-9] Token gerado com sucesso
+2022-07-05 17:52:39,731 INFO com.ciandt.token.provider.controllers.TokenController [http-nio-8080-exec-2] Recebido requisição para criação de token para chave: fulano
+2022-07-05 17:52:39,732 INFO com.ciandt.token.provider.controllers.TokenController [http-nio-8080-exec-2] Token gerado com sucesso
+2022-07-05 17:53:05,025 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8080-exec-10] Recebido requisição para geração de token: fulano
+2022-07-05 17:53:05,026 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8080-exec-10] Token validado com sucesso
