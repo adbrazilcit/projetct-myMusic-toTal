@@ -1,6 +1,5 @@
 package com.ciandt.summit.bootcamp2022.domain;
 
-import com.ciandt.summit.bootcamp2022.domain.dtos.MusicaDTO;
 public class Musica {
     private String id;
     private Artista artistaId;
@@ -37,6 +36,15 @@ public class Musica {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    @Override
+    public String toString() {
+        return "Musica{" +
+                "id='" + id + '\'' +
+                ", artistaId=" + artistaId +
+                ", nome='" + nome + '\'' +
+                '}';
     }
 
     public Musica(MusicaDTO musicaDTO){
