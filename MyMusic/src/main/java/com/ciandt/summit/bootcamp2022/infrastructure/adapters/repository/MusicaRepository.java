@@ -4,11 +4,11 @@ import com.ciandt.summit.bootcamp2022.domain.ports.repository.MusicaRepositoryPo
 import org.springframework.stereotype.Component;
 
 @Component
-public class MusicaRepository implements MusicaRepositoryPort {
+public class MusicaRepository  {
 
-    private final SpringMusicaRepository springMusicaRepository;
-
-    public MusicaRepository(SpringMusicaRepository springMusicaRepository) {
-        this.springMusicaRepository = springMusicaRepository;
-    }
+//    private final SpringMusicaRepository springMusicaRepository;
+//
+//    public MusicaRepository(SpringMusicaRepository springMusicaRepository) {
+//        this.springMusicaRepository = springMusicaRepository;
+//    }
 }
