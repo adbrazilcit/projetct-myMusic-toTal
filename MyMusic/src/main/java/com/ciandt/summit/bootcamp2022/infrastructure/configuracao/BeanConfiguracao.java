@@ -8,12 +8,12 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
+//@Configuration
 public class BeanConfiguracao {
 
-    @Bean
-    MusicaServicePort musicaServiceMy(@Qualifier("musica")MusicaRepositoryPort musicaRepositoryPort){
-        return  new MusicaServiceImp(musicaRepositoryPort);
-    }
+//    @Bean
+//    MusicaServicePort musicaServiceMy(@Qualifier("musica")MusicaRepositoryPort musicaRepositoryPort){
+//        return new MusicaServiceImp(musicaRepositoryPort);
+//    }
 
 }

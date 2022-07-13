@@ -13,21 +13,21 @@ public class MusicaEntity {
     @Column(name="Id")
     private String id;
     @ManyToOne
-    @Column(name="ArtistaId")
-    private Artista artistaId;
+    @JoinColumn(name="ArtistaId")
+    private ArtistaEntity artistas;
     @Column(name="Nome")
     private String nome;
 
     public MusicaEntity() {
     }
 
-    public MusicaEntity(String id, Artista artistaId, String nome) {
+    public MusicaEntity(String id, ArtistaEntity artistas, String nome) {
         this.id = id;
-        this.artistaId = artistaId;
+        this.artistas = artistas;
         this.nome = nome;
     }
 
     public Musica toMusica(){
-        return new Musica(this.id, this.artistaId, this.nome);
+        return new Musica(this.id, new Artista(artistas.getId(),artistas.getNome()), this.nome);
     }
 }

@@ -8,10 +8,11 @@ public class ArtistaEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+
     @Column(name = "Id")
     private String id;
 
-    @OneToMany
+
     @Column(name = "Nome")
     private String nome;
 
