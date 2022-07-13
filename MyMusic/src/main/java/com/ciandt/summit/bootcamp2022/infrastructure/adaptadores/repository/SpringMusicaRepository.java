@@ -9,11 +9,6 @@ import java.util.Optional;
 
 @Repository
 public interface SpringMusicaRepository  extends JpaRepository<MusicaEntity,String> {
-    //Optional<MusicaEntity> findMusicById(String id);
 
-    List<MusicaEntity> findAll();
-
-    //List<MusicaEntity> findByNomeStartingWith(String nome);
-
-    //List<MusicaEntity> findByArtistaStartingWith(String nome);
+     List<MusicaEntity> findByNomeContainingIgnoreCase(String nome);
 }

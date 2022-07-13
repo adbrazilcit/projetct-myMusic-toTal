@@ -21,7 +21,7 @@ public class MusicaServiceImp implements MusicaServicePort {
 //    }
 
     @Override
-    public List<MusicaDTO> findMusicByFilter(String filtro) {
+    public List<MusicaDTO> findByFilter(String filtro) {
         this.musicaRepositoryPort.findAll();
         return null;
     }
