@@ -8,6 +8,8 @@ public class MusicaDTO {
 
        Artista artista;
 
+
+
        public Artista getArtista() {
               return artista;
        }
@@ -31,4 +33,10 @@ public class MusicaDTO {
        public void setNome(String nome) {
               this.nome = nome;
        }
+
+//       public MusicaDTO(String id, String nome, Artista artista) {
+//              this.id = id;
+//              this.nome = nome;
+//              this.artista = artista;
+//       }
 }

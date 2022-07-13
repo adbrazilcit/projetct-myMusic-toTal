@@ -1,5 +1,7 @@
 package com.ciandt.summit.bootcamp2022.domain;
 
+import com.ciandt.summit.bootcamp2022.domain.dtos.MusicaDTO;
+
 public class Musica {
     private String id;
     private Artista artistaId;
@@ -48,12 +50,13 @@ public class Musica {
     }
 
     public Musica(MusicaDTO musicaDTO){
-        this.id = musicaDTO.getId;
-        this.artistaId = musicaDTO.getArtistaId;
-        this.nome = musicaDTO.getNome;
+        this.id = musicaDTO.getId();
+        this.artistaId = musicaDTO.getArtista();
+        this.nome = musicaDTO.getNome();
     }
 
-    public MusicaDTO toMusicaDTO(){
-        return new MusicaDTO(this.id, this.artistaId, this.nome);
-    }
+//    public MusicaDTO toMusicaDTO(){
+//
+//        return new MusicaDTO(this.id, this.nome,this.artistaId);
+//    }
 }

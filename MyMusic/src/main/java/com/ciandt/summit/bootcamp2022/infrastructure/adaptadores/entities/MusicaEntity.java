@@ -1,4 +1,4 @@
-package com.ciandt.summit.bootcamp2022.infrastructure.adapters.entities;
+package com.ciandt.summit.bootcamp2022.infrastructure.adaptadores.entities;
 
 import com.ciandt.summit.bootcamp2022.domain.Artista;
 import com.ciandt.summit.bootcamp2022.domain.Musica;
