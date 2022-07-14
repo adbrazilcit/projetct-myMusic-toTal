@@ -9,7 +9,6 @@ public class MusicaDTO {
        Artista artista;
 
 
-
        public Artista getArtista() {
               return artista;
        }
@@ -34,9 +33,9 @@ public class MusicaDTO {
               this.nome = nome;
        }
 
-//       public MusicaDTO(String id, String nome, Artista artista) {
-//              this.id = id;
-//              this.nome = nome;
-//              this.artista = artista;
-//       }
+       public MusicaDTO(String id, String nome, Artista artista) {
+              this.id = id;
+              this.nome = nome;
+              this.artista = artista;
+       }
 }

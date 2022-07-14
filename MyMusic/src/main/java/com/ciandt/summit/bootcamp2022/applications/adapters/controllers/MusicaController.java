@@ -1,6 +1,5 @@
 package com.ciandt.summit.bootcamp2022.applications.adapters.controllers;
 
-import com.ciandt.summit.bootcamp2022.domain.Artista;
 import com.ciandt.summit.bootcamp2022.domain.dtos.MusicaDTO;
 import com.ciandt.summit.bootcamp2022.domain.ports.interfaces.MusicaServicePort;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.constraints.Size;
 import javax.websocket.server.PathParam;
+import java.util.List;
 
 
 @RestController
@@ -24,17 +24,17 @@ public class MusicaController {
     private  MusicaServicePort musicaServicePort;
 
     @GetMapping(value = "/musicas")
-    MusicaDTO findByFilter(@PathParam("filtro") @Size(min = 3) String filtro ){
-        Artista a = new Artista();
-        a.setId("2");
-        a.setNome("Bruno");
+    List<MusicaDTO> findByFilter(@PathParam("filtro") @Size(min = 4) String filtro ){
+//        Artista a = new Artista();
+//        a.setId("2");
+//        a.setNome("Bruno");
+//
+//        MusicaDTO musicaDTO = new MusicaDTO("1234","umbrella",a);
+//
+//
+//        return Arrays.asList(musicaDTO);
 
-        MusicaDTO musicaDTO = new MusicaDTO();
-        musicaDTO.setId("12345");
-        musicaDTO.setNome("Umbrella");
-        musicaDTO.setArtista(a);
-        //this.musicaServicePort.findMusicByFilter(filtro);
-        return musicaDTO;
+        return this.musicaServicePort.findMusicByFilter(filtro);
     }
 
 }
