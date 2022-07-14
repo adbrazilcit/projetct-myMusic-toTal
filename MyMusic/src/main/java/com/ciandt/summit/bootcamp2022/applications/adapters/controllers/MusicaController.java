@@ -24,7 +24,7 @@ public class MusicaController {
     private  MusicaServicePort musicaServicePort;
 
     @GetMapping(value = "/musicas")
-    List<MusicaDTO> findByFilter(@PathParam("filtro") @Size(min = 4) String filtro ){
+    List<MusicaDTO> findByFilter(@PathParam("filtro") @Size(min = 3) String filtro ){
 //        Artista a = new Artista();
 //        a.setId("2");
 //        a.setNome("Bruno");

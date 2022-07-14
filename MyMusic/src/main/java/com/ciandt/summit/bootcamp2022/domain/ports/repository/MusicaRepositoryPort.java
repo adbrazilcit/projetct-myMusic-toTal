@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public interface MusicaRepositoryPort {
 
-    List<Musica> findByFilter(String filtro);
+    List<Musica> findByFilter(String nome, String nomeArtista);
 
     Optional<Musica> findMusicById(String id);
 

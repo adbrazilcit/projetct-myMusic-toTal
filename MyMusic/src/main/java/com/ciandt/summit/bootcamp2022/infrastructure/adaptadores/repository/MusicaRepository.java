@@ -21,15 +21,16 @@ public class MusicaRepository implements MusicaRepositoryPort {
     private  SpringMusicaRepository springMusicaRepository;
 
     @Override
-    public List<Musica> findByFilter(String filtro) {
-        List<MusicaEntity>  filter = this.springMusicaRepository.findByNomeContainingIgnoreCase(filtro);
+    public List<Musica> findByFilter(String nome, String nomeArtista) {
+        List<MusicaEntity>  filter = this.springMusicaRepository.findByNomeContainingIgnoreCaseOrArtistasNomeContainingIgnoreCase(nome, nomeArtista);
+
 
         if (filter.isEmpty()){
-            LOGGER.info("Nenhuma musica encontrada com o filtro: " + filtro);
+            LOGGER.info("Nenhuma musica encontrada com o filtro: " + filter);
             throw new NotFoundException("Nenhuma musica encontrada");
         }
 
-        LOGGER.info("Musicas encontradas com o filtro: " + filtro);
+        LOGGER.info("Musicas encontradas com o filtro: " + filter);
 
         return filter.stream().map(MusicaEntity::toMusica).collect(Collectors.toList());
     }

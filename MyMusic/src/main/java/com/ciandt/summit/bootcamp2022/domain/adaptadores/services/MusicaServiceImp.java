@@ -22,11 +22,11 @@ public class MusicaServiceImp implements MusicaServicePort {
     @Autowired
     private  MusicaRepositoryPort musicaRepositoryPort;
 
-
-
     @Override
     public List<MusicaDTO> findMusicByFilter(String filtro) {
-        List<Musica> musicas =this.musicaRepositoryPort.findByFilter(filtro);
+
+        List<Musica> musicas =this.musicaRepositoryPort.findByFilter(filtro, filtro);
+
         if(musicas.isEmpty())
             throw  new NotFoundException("As informações não foram encontradas");
 
