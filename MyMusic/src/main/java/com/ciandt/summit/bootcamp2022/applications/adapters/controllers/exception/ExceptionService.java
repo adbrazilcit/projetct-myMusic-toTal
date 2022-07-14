@@ -20,6 +20,6 @@ public class ExceptionService {
     @ExceptionHandler()
     public ResponseEntity<NotFoundException> notFound(NotFoundException e){
         System.out.println("Cheguei aqui");
-        return  new ResponseEntity("Teste123", HttpStatus.BAD_REQUEST);
+        return  new ResponseEntity("Não encontramos as informações solicitadas", HttpStatus.NO_CONTENT);
     }
 }

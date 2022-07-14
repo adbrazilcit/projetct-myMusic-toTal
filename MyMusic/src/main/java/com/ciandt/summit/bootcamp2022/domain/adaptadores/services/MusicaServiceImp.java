@@ -22,24 +22,14 @@ public class MusicaServiceImp implements MusicaServicePort {
     @Autowired
     private  MusicaRepositoryPort musicaRepositoryPort;
 
+
+
     @Override
     public List<MusicaDTO> findMusicByFilter(String filtro) {
-
-        List<Musica> musicas =this.musicaRepositoryPort.findByFilter(filtro, filtro);
+        List<Musica> musicas = this.musicaRepositoryPort.findByFilter(filtro, filtro);
 
         if(musicas.isEmpty())
             throw  new NotFoundException("As informações não foram encontradas");
-
-//        Artista a = new Artista();
-//        a.setId("2");
-//        a.setNome("Bruno");
-//
-//        Musica musicaObject = new Musica();
-//        musicaObject.setId("2");
-//        musicaObject.setNome("Granade");
-//        musicaObject.setArtistaId(a);
-
-//        List<Musica> musicas = Arrays.asList(musicaObject);
 
         return  musicas.stream().map(
                 musica -> new MusicaDTO( musica.getId(), musica.getNome(), musica.getArtistaId())
