@@ -3,7 +3,7 @@ package com.ciandt.summit.bootcamp2022.infrastructure.adaptadores.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Artista")
+@Table(name = "Artistas")
 public class ArtistaEntity {
 
     @Id

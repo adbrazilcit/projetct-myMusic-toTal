@@ -29,6 +29,8 @@ public class MusicaRepository implements MusicaRepositoryPort {
             throw new NotFoundException("Nenhuma musica encontrada");
         }
 
+        LOGGER.info("Musicas encontradas com o filtro: " + filtro);
+
         return filter.stream().map(MusicaEntity::toMusica).collect(Collectors.toList());
     }
 
