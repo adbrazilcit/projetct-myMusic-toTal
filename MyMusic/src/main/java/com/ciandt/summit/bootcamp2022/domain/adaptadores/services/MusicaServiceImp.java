@@ -1,16 +1,15 @@
 package com.ciandt.summit.bootcamp2022.domain.adaptadores.services;
 
-import com.ciandt.summit.bootcamp2022.domain.Artista;
 import com.ciandt.summit.bootcamp2022.domain.Musica;
 import com.ciandt.summit.bootcamp2022.domain.dtos.MusicaDTO;
 import com.ciandt.summit.bootcamp2022.domain.exceptions.NotFoundException;
 import com.ciandt.summit.bootcamp2022.domain.ports.interfaces.MusicaServicePort;
 import com.ciandt.summit.bootcamp2022.domain.ports.repository.MusicaRepositoryPort;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import java.util.*;
+import java.util.Comparator;
+import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
@@ -18,8 +17,6 @@ public class MusicaServiceImp implements MusicaServicePort {
 
     @Autowired
     private  MusicaRepositoryPort musicaRepositoryPort;
-
-
 
     @Override
     public List<MusicaDTO> findMusicByFilter(String filtro) {

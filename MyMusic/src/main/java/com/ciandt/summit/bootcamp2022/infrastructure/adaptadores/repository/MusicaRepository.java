@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
@@ -36,25 +35,11 @@ public class MusicaRepository implements MusicaRepositoryPort {
     }
 
     @Override
-    public Optional<Musica> findMusicById(String id) {
-        Optional<MusicaEntity> musicaEntity = this.springMusicaRepository.findById(id);
-
-        if (musicaEntity.isPresent()) {
-            LOGGER.info("Musica encontrada com sucesso");
-            return Optional.of(musicaEntity.get().toMusica());
-        }
-
-        LOGGER.info("Musica não encontrada");
-        throw new NotFoundException("Música não encontrada");
-    }
-
-    @Override
     public List<Musica> findAll() {
         List<MusicaEntity> musicaEntity = this.springMusicaRepository.findAll();
 
         LOGGER.info("Músicas encontradas com sucesso");
         return musicaEntity.stream().map(MusicaEntity::toMusica).collect(Collectors.toList());
     }
-
 
 }
