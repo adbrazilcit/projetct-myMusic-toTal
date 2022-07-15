@@ -34,10 +34,10 @@ public class MusicaControllerTest {
     void retornaNoContentQuandoNaoEncontrarFiltro() throws Exception {
 
         MultiValueMap<String, String> par = new LinkedMultiValueMap<>();
-//        par.add("filtro", "andreus");
-        MockHttpServletRequestBuilder request = get("/api/v1/music/musicas?filtro=andreus");
 
-        System.out.println(mvc.perform(request).andReturn().getResponse().getStatus());
+        MockHttpServletRequestBuilder request = get("/api/musicas?filtro=andreus");
+
+       mvc.perform(request).andExpect(status().isNoContent());
 
     }
     @Test
@@ -45,7 +45,7 @@ public class MusicaControllerTest {
         MultiValueMap<String, String> par = new LinkedMultiValueMap<>();
 //        par.add("filtro", "bru");
 
-        MockHttpServletRequestBuilder request = get("/api/v1/music/musicas?filtro=br");
+        MockHttpServletRequestBuilder request = get("/api/musicas?filtro=br");
 
         System.out.println(mvc.perform(request).andReturn().getResponse().getStatus());
     }

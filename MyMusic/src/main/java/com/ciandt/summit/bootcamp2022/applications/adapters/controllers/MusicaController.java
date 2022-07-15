@@ -8,15 +8,20 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.ConstraintViolationException;
 import javax.validation.constraints.Size;
 import javax.websocket.server.PathParam;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 
 @RestController
-@RequestMapping("/api/v1/music")
+@RequestMapping("/api")
 @Validated
 public class MusicaController {
 
@@ -24,8 +29,21 @@ public class MusicaController {
     private  MusicaServicePort musicaServicePort;
 
     @GetMapping(value = "/musicas")
-    List<MusicaDTO> findByFilter(@PathParam("filtro") @Size(min = 3) String filtro ){
-        return this.musicaServicePort.findMusicByFilter(filtro);
+//    @GetMapping(value = {"/musicas", "/musicas{filtro}"})
+//    List<MusicaDTO> findByFilter(@PathParam(required = false) @Size(min = 3) String filtro ){
+//    List<MusicaDTO> findByFilter(@RequestParam(required = true)  Optional<String> filtro ){
+    Data findByFilter(@RequestParam(required = false) Optional<String> filtro ){
+
+        if(!filtro.isPresent()){
+            return new Data(this.musicaServicePort.findAll());
+        }
+        if(filtro.get().length()<3)
+            throw new ConstraintViolationException("teste",null);
+
+        return new Data(this.musicaServicePort.findMusicByFilter(filtro.get()));
+
     }
+
+
 
 }
