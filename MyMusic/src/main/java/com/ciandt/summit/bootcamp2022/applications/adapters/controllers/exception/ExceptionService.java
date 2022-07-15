@@ -13,13 +13,19 @@ public class ExceptionService {
 
     @ExceptionHandler({ConstraintViolationException.class})
     public ResponseEntity handler(Exception e){
-        System.out.println(e.getCause()+ e.getMessage());
-        return  new ResponseEntity("O filtro deve possuir no mínimo 3 letras", HttpStatus.BAD_REQUEST);
+        ErrorResponse errorResponse  =new ErrorResponse();
+        errorResponse.setStatus(HttpStatus.BAD_REQUEST.value());
+        errorResponse.setMessage("O filtro deve possuir no mínimo 3 letras");
+
+        return  new ResponseEntity(errorResponse, HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler()
     public ResponseEntity<NotFoundException> notFound(NotFoundException e){
-        System.out.println("Cheguei aqui");
-        return  new ResponseEntity("Não encontramos as informações solicitadas", HttpStatus.NO_CONTENT);
+        ErrorResponse errorResponse  =new ErrorResponse();
+        errorResponse.setStatus(HttpStatus.NO_CONTENT.value());
+        errorResponse.setMessage("Não encontramos as informações solicitadas");
+
+        return  new ResponseEntity(errorResponse, HttpStatus.NO_CONTENT);
     }
 }
