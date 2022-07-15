@@ -1,6 +1,7 @@
 package com.ciandt.summit.bootcamp2022.applications.adapters.controllers;
 
 import com.ciandt.summit.bootcamp2022.domain.ports.interfaces.MusicaServicePort;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,6 +22,7 @@ public class MusicaController {
     private  MusicaServicePort musicaServicePort;
 
     @GetMapping(value = "/musicas")
+    @ApiOperation(value = "O endpoint retorna músicas e artistas ordenados por artista.")
     Data findByFilter(@RequestParam(required = false) Optional<String> filtro ){
 
         if(!filtro.isPresent()){
