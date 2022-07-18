@@ -20,7 +20,7 @@ public class MusicaServiceImp implements MusicaServicePort {
 
     @Override
     public List<MusicaDTO> findMusicByFilter(String filtro) {
-        List<Musica> musicas = this.musicaRepositoryPort.findByFilter(filtro, filtro);
+        List<Musica> musicas = this.musicaRepositoryPort.findByFilter(filtro);
 
         if(musicas.isEmpty())
             throw  new NotFoundException("As informações não foram encontradas");
