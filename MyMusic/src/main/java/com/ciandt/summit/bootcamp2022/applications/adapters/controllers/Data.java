@@ -4,18 +4,18 @@ import com.ciandt.summit.bootcamp2022.domain.dtos.MusicaDTO;
 
 import java.util.List;
 
-public class Data<T> {
-    private List<T> data;
+public class Data {
+    private List<MusicaDTO> data;
 
-    public Data(List<T> dataDTOS) {
+    public Data(List<MusicaDTO> dataDTOS) {
         this.data= dataDTOS;
     }
 
-    public List<T> getData() {
+    public List<MusicaDTO> getData() {
         return data;
     }
 
-    public void setMusicaDTOS(List<T> dataDTOS) {
+    public void setMusicaDTOS(List<MusicaDTO> dataDTOS) {
         this.data = dataDTOS;
     }
 }
