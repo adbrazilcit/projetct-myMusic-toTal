@@ -1,9 +1,9 @@
-package com.ciandt.summit.bootcamp2022.infrastructure.adaptadores.repository;
+package com.ciandt.summit.bootcamp2022.infrastructure.adapters.repository;
 
 import com.ciandt.summit.bootcamp2022.domain.Musica;
 import com.ciandt.summit.bootcamp2022.domain.exceptions.NotFoundException;
 import com.ciandt.summit.bootcamp2022.domain.ports.repository.MusicaRepositoryPort;
-import com.ciandt.summit.bootcamp2022.infrastructure.adaptadores.entities.MusicaEntity;
+import com.ciandt.summit.bootcamp2022.infrastructure.adapters.entities.MusicaEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

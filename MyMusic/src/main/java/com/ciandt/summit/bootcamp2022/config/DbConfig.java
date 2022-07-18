@@ -33,7 +33,6 @@ public class DbConfig {
         final LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource());
         em.setPackagesToScan(new String[]{"com.ciandt.summit.bootcamp2022.infrastructure.adaptadores.entities"});
-//        em.setPackagesToScan(new String[]{"com.ciandt.summit.bootcamp2022.entity"});
         em.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
         em.setJpaProperties(additionalProperties());
         return em;

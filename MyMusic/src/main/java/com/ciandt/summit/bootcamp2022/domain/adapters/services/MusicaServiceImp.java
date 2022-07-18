@@ -1,4 +1,4 @@
-package com.ciandt.summit.bootcamp2022.domain.adaptadores.services;
+package com.ciandt.summit.bootcamp2022.domain.adapters.services;
 
 import com.ciandt.summit.bootcamp2022.domain.Musica;
 import com.ciandt.summit.bootcamp2022.domain.dtos.MusicaDTO;

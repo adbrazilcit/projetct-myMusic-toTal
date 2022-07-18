@@ -1,4 +1,4 @@
-package com.ciandt.summit.bootcamp2022.infrastructure.adaptadores.entities;
+package com.ciandt.summit.bootcamp2022.infrastructure.adapters.entities;
 
 import javax.persistence.*;
 
