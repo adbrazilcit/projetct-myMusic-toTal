@@ -9,8 +9,6 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-<!-- ver se é melhor atualizara versao do spring <version>2.6.3</version>-->
-<!--		<version>2.6.3</version>-->
 		<version>2.7.1</version>
 	</parent>
 

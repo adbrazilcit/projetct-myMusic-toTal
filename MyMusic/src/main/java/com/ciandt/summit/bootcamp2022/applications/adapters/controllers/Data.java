@@ -7,15 +7,15 @@ import java.util.List;
 public class Data {
     private List<MusicaDTO> data;
 
-    public Data(List<MusicaDTO> musicaDTOS) {
-        this.data= musicaDTOS;
+    public Data(List<MusicaDTO> dataDTOS) {
+        this.data= dataDTOS;
     }
 
     public List<MusicaDTO> getData() {
         return data;
     }
 
-    public void setMusicaDTOS(List<MusicaDTO> musicaDTOS) {
-        this.data = musicaDTOS;
+    public void setMusicaDTOS(List<MusicaDTO> dataDTOS) {
+        this.data = dataDTOS;
     }
 }
