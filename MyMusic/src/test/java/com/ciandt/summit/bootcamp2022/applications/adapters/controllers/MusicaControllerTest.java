@@ -1,9 +1,12 @@
 package com.ciandt.summit.bootcamp2022.applications.adapters.controllers;
 
 
+import com.ciandt.summit.bootcamp2022.domain.dtos.MusicaDTO;
+import com.ciandt.summit.bootcamp2022.domain.exceptions.NotFoundException;
 import com.ciandt.summit.bootcamp2022.domain.ports.interfaces.MusicaServicePort;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.BDDMockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -12,6 +15,9 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -30,20 +36,32 @@ public class MusicaControllerTest {
     @Test
     void retornaNoContentQuandoNaoEncontrarFiltro() throws Exception {
 
-        MultiValueMap<String, String> par = new LinkedMultiValueMap<>();
-
         MockHttpServletRequestBuilder request = get("/api/musicas?filtro=andreus");
-
-       mvc.perform(request).andExpect(status().isNoContent());
+        BDDMockito.given(musicaServicePort.findMusicByFilter("andreus")).willThrow(new NotFoundException("As informações não foram encontradas"));
+        mvc.perform(request).andExpect(status().isNoContent());
     }
 
     @Test
     void retornaArrayQuandoEncontrarFiltro() throws Exception {
-        MultiValueMap<String, String> par = new LinkedMultiValueMap<>();
-//        par.add("filtro", "bru");
+
+        MockHttpServletRequestBuilder request = get("/api/musicas?filtro=bruno");
+        BDDMockito.given(musicaServicePort.findMusicByFilter("bruno")).willReturn(new ArrayList<MusicaDTO>());
+        mvc.perform(request).andExpect(status().isOk());
+    }
+
+    @Test
+    void retornaArrayPreechidoAllQuandoPassadoSemfiltro() throws Exception {
+
+        MockHttpServletRequestBuilder request = get("/api/musicas");
+        BDDMockito.given(musicaServicePort.findMusicByFilter("bruno")).willReturn(new ArrayList<MusicaDTO>());
+        mvc.perform(request).andExpect(status().isOk());
+    }
+
+    @Test
+    void retornaErro400QuandoFiltroMenorQue3Caracter() throws Exception {
 
         MockHttpServletRequestBuilder request = get("/api/musicas?filtro=br");
-
+        mvc.perform(request).andExpect(status().isBadRequest());
         System.out.println(mvc.perform(request).andReturn().getResponse().getStatus());
     }
 }
