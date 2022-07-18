@@ -3,6 +3,7 @@ package com.ciandt.summit.bootcamp2022.infrastructure.adapters.repository;
 import com.ciandt.summit.bootcamp2022.domain.Musica;
 import com.ciandt.summit.bootcamp2022.domain.exceptions.NotFoundException;
 import com.ciandt.summit.bootcamp2022.domain.ports.repository.MusicaRepositoryPort;
+import com.ciandt.summit.bootcamp2022.infrastructure.adapters.entities.ArtistaEntity;
 import com.ciandt.summit.bootcamp2022.infrastructure.adapters.entities.MusicaEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,21 +18,28 @@ public class MusicaRepository implements MusicaRepositoryPort {
     private static final Logger LOGGER = Logger.getLogger(MusicaRepository.class.getName());
 
     @Autowired
-    private  SpringMusicaRepository springMusicaRepository;
+    private SpringMusicaRepository springMusicaRepository;
+
+    @Autowired
+    private SpringArtistaRepository springArtistaRepository;
 
     @Override
-    public List<Musica> findByFilter(String nome, String nomeArtista) {
-        List<MusicaEntity>  filter = this.springMusicaRepository.findByNomeContainingIgnoreCaseOrArtistasNomeContainingIgnoreCase(nome, nomeArtista);
+    public List<Musica> findByFilter(String filtro) {
+        List<MusicaEntity> musica = this.springMusicaRepository.findByNomeContainingIgnoreCase(filtro);
+        List<ArtistaEntity> artista = this.springArtistaRepository.findByNomeContainingIgnoreCase(filtro);
 
-
-        if (filter.isEmpty()){
-            LOGGER.info("Nenhuma musica encontrada com o filtro: " + filter);
-            throw new NotFoundException("Nenhuma musica encontrada");
+        if (musica.isEmpty() && artista.isEmpty()) {
+            LOGGER.info("As informações não foram encontradas");
+            throw new NotFoundException("As informações não foram encontradas");
         }
 
-        LOGGER.info("Musicas encontradas com o filtro: " + filter);
+        for (ArtistaEntity artitas : artista) {
+            musica.addAll(springMusicaRepository.findByArtistas(artitas));
+        }
 
-        return filter.stream().map(MusicaEntity::toMusica).collect(Collectors.toList());
+        LOGGER.info("Filtrando por: " + filtro + " - " + musica.size() + " resultados");
+        return musica.stream().map(
+                MusicaEntity::toMusica).collect(Collectors.toList());
     }
 
     @Override

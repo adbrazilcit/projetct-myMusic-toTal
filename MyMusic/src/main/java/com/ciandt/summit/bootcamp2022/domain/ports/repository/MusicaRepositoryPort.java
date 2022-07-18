@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface MusicaRepositoryPort {
 
-    List<Musica> findByFilter(String nome, String nomeArtista);
+    List<Musica> findByFilter(String filtro);
 
     List<Musica> findAll();
 
