@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="summit-bootcamp" target="1.8" />
+      <module name="summit-bootcamp" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
