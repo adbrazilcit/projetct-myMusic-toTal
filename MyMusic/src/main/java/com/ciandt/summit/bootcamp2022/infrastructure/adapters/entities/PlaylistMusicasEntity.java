@@ -5,10 +5,12 @@ import com.ciandt.summit.bootcamp2022.domain.PlayList;
 import com.ciandt.summit.bootcamp2022.domain.PlaylistMusicas;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "PlaylistMusicas")
-public class PlaylistMusicasEntity {
+@IdClass(PlayListMusicasId.class)
+public class PlaylistMusicasEntity implements Serializable {
 
     @Id
     @ManyToOne
