@@ -9,9 +9,6 @@
         <module name="summit-bootcamp" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="summit-bootcamp" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
