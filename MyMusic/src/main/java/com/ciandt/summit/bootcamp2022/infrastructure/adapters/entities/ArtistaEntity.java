@@ -1,5 +1,7 @@
 package com.ciandt.summit.bootcamp2022.infrastructure.adapters.entities;
 
+import com.ciandt.summit.bootcamp2022.domain.Artista;
+
 import javax.persistence.*;
 
 @Entity
@@ -46,5 +48,10 @@ public class ArtistaEntity {
                 "id='" + id + '\'' +
                 ", nome='" + nome + '\'' +
                 '}';
+    }
+
+    public ArtistaEntity(Artista artista){
+        this.id = artista.getId();;
+        this.nome = artista.getNome();
     }
 }

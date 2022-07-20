@@ -9,4 +9,5 @@ public interface MusicaServicePort {
 
        List<MusicaDTO> findMusicByFilter(String filtro);
        List<MusicaDTO> findAll();
+       MusicaDTO findMusicById(String param);
 }

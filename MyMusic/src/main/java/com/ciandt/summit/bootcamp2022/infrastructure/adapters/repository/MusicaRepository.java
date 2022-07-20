@@ -1,6 +1,7 @@
 package com.ciandt.summit.bootcamp2022.infrastructure.adapters.repository;
 
 import com.ciandt.summit.bootcamp2022.domain.Musica;
+import com.ciandt.summit.bootcamp2022.domain.dtos.MusicaDTO;
 import com.ciandt.summit.bootcamp2022.domain.exceptions.NotFoundException;
 import com.ciandt.summit.bootcamp2022.domain.ports.repository.MusicaRepositoryPort;
 import com.ciandt.summit.bootcamp2022.infrastructure.adapters.entities.ArtistaEntity;
@@ -50,4 +51,7 @@ public class MusicaRepository implements MusicaRepositoryPort {
         return musicaEntity.stream().map(MusicaEntity::toMusica).collect(Collectors.toList());
     }
 
+    public Musica findMusicById(String musicId){
+        return this.springMusicaRepository.findById(musicId).get().toMusica();
+    }
 }

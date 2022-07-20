@@ -1,12 +1,12 @@
 package com.ciandt.summit.bootcamp2022.domain;
 
-public class PlayList {
+public class Playlist {
     private String id;
 
-    public PlayList() {
+    public Playlist() {
     }
 
-    public PlayList(String id) {
+    public Playlist(String id) {
         this.id = id;
     }
 

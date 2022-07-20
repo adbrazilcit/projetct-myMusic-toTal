@@ -11,5 +11,6 @@ public interface MusicaRepositoryPort {
 
     List<Musica> findAll();
 
+    Musica findMusicById(String musicId);
 
 }
