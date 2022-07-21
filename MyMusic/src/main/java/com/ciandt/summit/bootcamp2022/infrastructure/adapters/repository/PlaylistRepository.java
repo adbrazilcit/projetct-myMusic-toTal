@@ -1,8 +1,10 @@
 package com.ciandt.summit.bootcamp2022.infrastructure.adapters.repository;
 
+import com.ciandt.summit.bootcamp2022.domain.Musica;
 import com.ciandt.summit.bootcamp2022.domain.Playlist;
 import com.ciandt.summit.bootcamp2022.domain.exceptions.NotFoundException;
 import com.ciandt.summit.bootcamp2022.domain.ports.repository.PlaylistRepositoryPort;
+import com.ciandt.summit.bootcamp2022.infrastructure.adapters.entities.MusicaEntity;
 import com.ciandt.summit.bootcamp2022.infrastructure.adapters.entities.PlaylistEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +21,9 @@ public class PlaylistRepository implements PlaylistRepositoryPort {
     @Autowired
     private SpringPlaylistRepository springPlaylistRepository;
 
+    @Autowired
+    private SpringMusicaRepository springMusicaRepository;
+
     @Override
     public Playlist findById(String playlistId) {
         Optional<PlaylistEntity> playlist = this.springPlaylistRepository.findById(playlistId);
@@ -28,7 +33,7 @@ public class PlaylistRepository implements PlaylistRepositoryPort {
             throw new NotFoundException("As informações não foram encontradas");
         }
 
-        LOGGER.info("Filtrando por: " + playlistId + " - " + playlist.isEmpty() + "resultados");
+        LOGGER.info("Filtrando por: " + playlistId );
         return playlist.get().toPlayList();
     }
 
@@ -41,8 +46,15 @@ public class PlaylistRepository implements PlaylistRepositoryPort {
 
     @Override
     public void save(String playlistId, String musicaId) {
+        Optional<PlaylistEntity> playlist = this.springPlaylistRepository.findById(playlistId);
 
-        System.out.println("Salvando música na playlist");
+        LOGGER.info("Playlist encontrada " + playlistId);
 
+        Optional<MusicaEntity> musica = this.springMusicaRepository.findById(musicaId);
+
+        LOGGER.info("Musica encontrada " +  musicaId);
+        playlist.get().adicionaMusicasNaPlaylist(musica.get());
+
+        this.springPlaylistRepository.save(playlist.get());
     }
 }

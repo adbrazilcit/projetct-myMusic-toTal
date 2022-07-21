@@ -3,14 +3,17 @@ package com.ciandt.summit.bootcamp2022.domain.dtos;
 import com.ciandt.summit.bootcamp2022.domain.Artista;
 import com.ciandt.summit.bootcamp2022.domain.Musica;
 
+import java.util.List;
+
 public class MusicaDTO {
        String id;
        String nome;
 
        Artista artista;
 
+       public MusicaDTO(){}
 
-       public Artista getArtista() {
+    public Artista getArtista() {
               return artista;
        }
 

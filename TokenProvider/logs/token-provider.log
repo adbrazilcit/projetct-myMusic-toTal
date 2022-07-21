@@ -289,3 +289,54 @@ org.jasypt.exceptions.EncryptionOperationNotPossibleException: null
 2022-07-19 15:16:45,287 ERROR com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-9] Requisição inválida: Token expirado
 2022-07-19 15:16:47,352 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-10] Recebido requisição para geração de token: andressa
 2022-07-19 15:16:47,353 ERROR com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-10] Requisição inválida: Token expirado
+2022-07-21 13:48:54,692 INFO org.springframework.boot.StartupInfoLogger [main] Starting TokenProviderApplication using Java 11.0.15 on lnb035828spo with PID 79483 (/home/andressas/Documentos/projetct-myMusic-toTal/TokenProvider/target/classes started by CIANDT\andressas in /home/andressas/Documentos/projetct-myMusic-toTal/TokenProvider)
+2022-07-21 13:48:54,694 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2022-07-21 13:48:55,566 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8081 (http)
+2022-07-21 13:48:55,578 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2022-07-21 13:48:55,578 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2022-07-21 13:48:55,579 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-07-21 13:48:55,647 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2022-07-21 13:48:55,648 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 920 ms
+2022-07-21 13:48:56,182 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [main] Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-07-21 13:48:56,201 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
+2022-07-21 13:48:56,210 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8081 (http) with context path ''
+2022-07-21 13:48:56,222 INFO org.springframework.boot.StartupInfoLogger [main] Started TokenProviderApplication in 1.909 seconds (JVM running for 2.414)
+2022-07-21 13:54:14,283 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-21 13:54:14,284 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-07-21 13:54:14,285 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-1] Completed initialization in 1 ms
+2022-07-21 13:54:14,346 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-1] Recebido requisição para geração de token: andressa
+2022-07-21 13:54:14,389 ERROR com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-1] Requisição inválida: Token expirado
+2022-07-21 13:54:14,515 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-2] Recebido requisição para geração de token: andressa
+2022-07-21 13:54:14,517 ERROR com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-2] Requisição inválida: Token expirado
+2022-07-21 13:55:29,943 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-3] Recebido requisição para geração de token: andressa
+2022-07-21 13:55:29,945 ERROR com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-3] Requisição inválida: Token expirado
+2022-07-21 13:55:30,075 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-4] Recebido requisição para geração de token: andressa
+2022-07-21 13:55:30,076 ERROR com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-4] Requisição inválida: Token expirado
+2022-07-21 13:56:29,775 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-5] Recebido requisição para geração de token: andressa
+2022-07-21 13:56:29,777 ERROR com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-5] Requisição inválida: Token expirado
+2022-07-21 13:56:42,787 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-6] Recebido requisição para geração de token: andressa
+2022-07-21 13:56:42,789 ERROR com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-6] Requisição inválida: Token expirado
+2022-07-21 15:10:02,145 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-7] Recebido requisição para geração de token: andressa
+2022-07-21 15:10:02,146 ERROR com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-7] Requisição inválida: Token expirado
+2022-07-21 15:10:02,248 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-8] Recebido requisição para geração de token: andressa
+2022-07-21 15:10:02,250 ERROR com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-8] Requisição inválida: Token expirado
+2022-07-21 15:12:07,513 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-9] Recebido requisição para geração de token: andressa
+2022-07-21 15:12:07,514 ERROR com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-9] Requisição inválida: Token expirado
+2022-07-21 15:12:07,612 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-10] Recebido requisição para geração de token: andressa
+2022-07-21 15:12:07,613 ERROR com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-10] Requisição inválida: Token expirado
+2022-07-21 15:14:17,058 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-1] Recebido requisição para geração de token: andressa
+2022-07-21 15:14:17,060 ERROR com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-1] Requisição inválida: Token expirado
+2022-07-21 15:21:38,275 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-2] Recebido requisição para geração de token: andressa
+2022-07-21 15:21:38,276 ERROR com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-2] Requisição inválida: Token expirado
+2022-07-21 15:21:38,434 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-3] Recebido requisição para geração de token: andressa
+2022-07-21 15:21:38,435 ERROR com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-3] Requisição inválida: Token expirado
+2022-07-21 15:23:06,372 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-4] Recebido requisição para geração de token: andressa
+2022-07-21 15:23:06,372 ERROR com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-4] Requisição inválida: Token expirado
+2022-07-21 15:23:06,536 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-5] Recebido requisição para geração de token: andressa
+2022-07-21 15:23:06,537 ERROR com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-5] Requisição inválida: Token expirado
+2022-07-21 15:23:52,519 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-6] Recebido requisição para geração de token: andressa
+2022-07-21 15:23:52,520 ERROR com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-6] Requisição inválida: Token expirado
+2022-07-21 15:23:55,701 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-7] Recebido requisição para geração de token: andressa
+2022-07-21 15:23:55,703 ERROR com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-7] Requisição inválida: Token expirado
+2022-07-21 15:24:22,759 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-8] Recebido requisição para geração de token: andressa
+2022-07-21 15:24:22,760 ERROR com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-8] Requisição inválida: Token expirado
