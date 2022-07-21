@@ -13,6 +13,4 @@ public interface SpringPlaylistRepository extends JpaRepository<PlaylistEntity, 
     List<PlaylistEntity> findAll();
     Optional<PlaylistEntity> findById(String id);
 
-
-
 }

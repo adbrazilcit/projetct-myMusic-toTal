@@ -15,7 +15,9 @@ public class PlaylistController {
     @PostMapping("/{playlistId}/musicas")
     public Data addMusica(@PathVariable("playlistId") String playlistId, @RequestBody Data data) {
 
-        this.playlistServicePort.addMusicInPlaylist(playlistId, data.getData().get(0).getId());
+        String musicaId = data.getData().get(0).getId();
+
+        this.playlistServicePort.addMusicInPlaylist(playlistId, musicaId);
 
         return data;
     }
