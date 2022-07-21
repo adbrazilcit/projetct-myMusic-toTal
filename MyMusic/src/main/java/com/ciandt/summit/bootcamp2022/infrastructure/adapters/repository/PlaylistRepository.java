@@ -19,7 +19,6 @@ public class PlaylistRepository implements PlaylistRepositoryPort {
     @Autowired
     private SpringPlaylistRepository springPlaylistRepository;
 
-
     @Override
     public Playlist findById(String playlistId) {
         Optional<PlaylistEntity> playlist = this.springPlaylistRepository.findById(playlistId);
@@ -31,7 +30,6 @@ public class PlaylistRepository implements PlaylistRepositoryPort {
 
         LOGGER.info("Filtrando por: " + playlistId + " - " + playlist.isEmpty() + "resultados");
         return playlist.get().toPlayList();
-
     }
 
     @Override
@@ -39,6 +37,12 @@ public class PlaylistRepository implements PlaylistRepositoryPort {
         List<PlaylistEntity> playlistEntity = this.springPlaylistRepository.findAll();
         LOGGER.info("Músicas encontradas com sucesso");
         return playlistEntity.stream().map(PlaylistEntity::toPlayList).collect(Collectors.toList());
+    }
+
+    @Override
+    public void save(String playlistId, String musicaId) {
+
+        System.out.println("Salvando música na playlist");
 
     }
 }
