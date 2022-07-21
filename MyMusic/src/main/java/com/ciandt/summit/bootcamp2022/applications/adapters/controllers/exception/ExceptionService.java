@@ -1,13 +1,17 @@
 package com.ciandt.summit.bootcamp2022.applications.adapters.controllers.exception;
 
 import com.ciandt.summit.bootcamp2022.domain.exceptions.NotFoundException;
+import org.springframework.core.Ordered;
+import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.client.HttpClientErrorException;
 
 import javax.validation.ConstraintViolationException;
 
+@Order(Ordered.HIGHEST_PRECEDENCE)
 @ControllerAdvice
 public class ExceptionService {
 
@@ -28,4 +32,16 @@ public class ExceptionService {
 
         return  new ResponseEntity(errorResponse, HttpStatus.NO_CONTENT);
     }
+    @ExceptionHandler({RuntimeException.class})
+    public ResponseEntity<AutenticationException> semAutenticacao(AutenticationException e){
+
+        System.out.println("semAutenticação");
+        ErrorResponse errorResponse  =new ErrorResponse();
+        errorResponse.setStatus(HttpStatus.UNAUTHORIZED.value());
+        errorResponse.setMessage("Não Possui acesso, realize a autenticação ");
+
+        return  new ResponseEntity(errorResponse, HttpStatus.UNAUTHORIZED);
+    }
+
+
 }
