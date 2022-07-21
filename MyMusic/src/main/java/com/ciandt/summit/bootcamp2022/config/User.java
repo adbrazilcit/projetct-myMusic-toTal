@@ -7,4 +7,7 @@ public class User {
         this.data = data;
     }
 
+    public Data getData() {
+        return data;
+    }
 }

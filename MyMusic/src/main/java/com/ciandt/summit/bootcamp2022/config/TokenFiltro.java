@@ -17,6 +17,7 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.nio.file.Path;
 
 public class TokenFiltro  extends BasicAuthenticationFilter {
 
@@ -41,8 +42,8 @@ public class TokenFiltro  extends BasicAuthenticationFilter {
         HttpRequest request1 = HttpRequest.newBuilder(
                         URI.create("http://localhost:8081/api/v1/token/authorizer"))
                 .header("Content-Type", "application/json")
-                //.POST(HttpRequest.BodyPublishers.ofFile(Path.of("./src/main/resources/data/token.json")))
-                .POST(HttpRequest.BodyPublishers.ofString(convertObjectToJson(user)))
+                .POST(HttpRequest.BodyPublishers.ofFile(Path.of("./src/main/resources/data/token.json")))
+                //.POST(HttpRequest.BodyPublishers.ofString(convertObjectToJson(user)))
                 .build();
 
 
