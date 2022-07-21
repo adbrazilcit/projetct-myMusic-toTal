@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public interface SpringMusicaRepository extends JpaRepository<MusicaEntity, String> {
 
-   List<MusicaEntity> findByNomeContainingIgnoreCase(String nome);
+    List<MusicaEntity> findByNomeContainingIgnoreCase(String nome);
 
-   List<MusicaEntity> findByArtistas(ArtistaEntity artistas);
+    List<MusicaEntity> findByArtistas(ArtistaEntity artistas);
 }

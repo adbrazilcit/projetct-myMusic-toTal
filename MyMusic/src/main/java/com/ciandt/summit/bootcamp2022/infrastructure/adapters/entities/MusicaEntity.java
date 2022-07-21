@@ -30,4 +30,10 @@ public class MusicaEntity {
     public Musica toMusica(){
         return new Musica(this.id, new Artista(artistas.getId(),artistas.getNome()), this.nome);
     }
+
+    public MusicaEntity(Musica musica){
+        this.id = musica.getId();
+        this.artistas = new ArtistaEntity(musica.getArtistaId());
+        this.nome = musica.getNome();
+    }
 }

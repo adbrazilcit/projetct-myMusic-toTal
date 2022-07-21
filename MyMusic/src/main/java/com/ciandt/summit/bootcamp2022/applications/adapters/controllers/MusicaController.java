@@ -11,12 +11,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.ConstraintViolationException;
 import java.util.Optional;
+import java.util.logging.Logger;
 
 
 @RestController
 @RequestMapping("/api")
 @Validated
 public class MusicaController {
+
+    private static final Logger LOGGER = Logger.getLogger(MusicaController.class.getName());
 
     @Autowired
     private  MusicaServicePort musicaServicePort;
@@ -26,11 +29,14 @@ public class MusicaController {
     Data findByFilter(@RequestParam(required = false) Optional<String> filtro ){
 
         if(!filtro.isPresent()){
+            LOGGER.info("Filtro não informado, retornando todas as músicas.");
             return new Data(this.musicaServicePort.findAll());
         }
 
-        if(filtro.get().length()<3)
+        if(filtro.get().length()<3) {
+            LOGGER.warning("Filtro deve conter no mínimo 3 caracteres.");
             throw new ConstraintViolationException("Filtro menor que três caracteres ", null);
+        }
 
         return new Data(this.musicaServicePort.findMusicByFilter(filtro.get()));
     }

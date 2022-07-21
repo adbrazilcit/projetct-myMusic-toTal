@@ -45,4 +45,9 @@ public class MusicaServiceImp implements MusicaServicePort {
         return  musicas.stream().map(
                 musica -> new MusicaDTO( musica.getId(), musica.getNome(), musica.getArtistaId())).sorted(comparatorNomeArtista.thenComparing(comparatorNomeMusica)).collect(Collectors.toList());
     }
+
+    @Override
+    public MusicaDTO findMusicById(String param) {
+        return this.musicaRepositoryPort.findMusicById(param).toMusicaDTO();
+    }
 }

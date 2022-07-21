@@ -50,4 +50,7 @@ public class MusicaRepository implements MusicaRepositoryPort {
         return musicaEntity.stream().map(MusicaEntity::toMusica).collect(Collectors.toList());
     }
 
+    public Musica findMusicById(String musicId){
+        return this.springMusicaRepository.findById(musicId).get().toMusica();
+    }
 }

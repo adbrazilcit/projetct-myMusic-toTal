@@ -1,6 +1,9 @@
 package com.ciandt.summit.bootcamp2022.domain.dtos;
 
 import com.ciandt.summit.bootcamp2022.domain.Artista;
+import com.ciandt.summit.bootcamp2022.domain.Musica;
+
+import java.util.List;
 
 public class MusicaDTO {
        String id;
@@ -8,8 +11,9 @@ public class MusicaDTO {
 
        Artista artista;
 
+       public MusicaDTO(){}
 
-       public Artista getArtista() {
+    public Artista getArtista() {
               return artista;
        }
 
@@ -37,5 +41,9 @@ public class MusicaDTO {
               this.id = id;
               this.nome = nome;
               this.artista = artista;
+       }
+
+       public Musica toMusic() {
+              return new Musica(this.id, this.artista, this.nome);
        }
 }
