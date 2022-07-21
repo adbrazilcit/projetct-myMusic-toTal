@@ -15,15 +15,8 @@ public class ConfiguracaoToken extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-
-
-        http.csrf().disable().addFilter(new TokenFiltro(authenticationManager()));
-//                .anyRequest().denyAll().and().addFilter(new TokenFiltro(authenticationManager()));
-
-                //.authenticated();
-//                .and().
-//                addFilter(new TokenFiltro(authenticationManager()))
-//                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+        http.csrf().disable().addFilter(new TokenFiltro(authenticationManager())).
+                sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
     }
 

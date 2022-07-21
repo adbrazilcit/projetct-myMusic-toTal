@@ -28,24 +28,18 @@ public class TokenFiltro  extends BasicAuthenticationFilter {
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws IOException, ServletException {
-        System.out.println(request.getHeader("Authorization"));
-         //create a client
         HttpClient client = HttpClient.newHttpClient();
 
         Data userData = new Data(request.getHeader("usuario"), request.getHeader("Authorization"));
-        //System.out.println(user.getNome()+" "+user.getToken());
-        User user = new User(userData);
-        System.out.println(convertObjectToJson(user));
 
-        // create a request
+        User user = new User(userData);
+
+
         HttpRequest request1 = HttpRequest.newBuilder(
                         URI.create("http://localhost:8081/api/v1/token/authorizer"))
                 .header("Content-Type", "application/json")
-                //.POST(HttpRequest.BodyPublishers.ofFile(Path.of("./src/main/resources/data/token.json")))
                 .POST(HttpRequest.BodyPublishers.ofString(convertObjectToJson(user)))
                 .build();
-
-
 
         try {
             System.out.println(client.send(request1, HttpResponse.BodyHandlers.ofString()).statusCode());
@@ -60,41 +54,17 @@ public class TokenFiltro  extends BasicAuthenticationFilter {
         } catch (Exception e) {
 
             ErrorResponse errorResponse = new ErrorResponse();
-            errorResponse.setStatus(HttpStatus.UNAUTHORIZED.value());
-            errorResponse.setMessage("Login !!");
+            errorResponse.setStatus(HttpStatus.FORBIDDEN.value());
+            errorResponse.setMessage("Autenticação inválida");
+            request.setCharacterEncoding("UTF-8");
+            response.setContentType("application/json;charset=UTF-8");
 
             response.getWriter().write(convertObjectToJson(errorResponse));
             response.setStatus(HttpStatus.FORBIDDEN.value());
 
         }
 
-
-
-
-//        return;
-
-////        throw new NotFoundException("Realize a autenticação");
-//        try {
-////            if(client.send(request1, HttpResponse.BodyHandlers.ofString()).statusCode()==500)
-////                throw new AutenticationException("Usuário não possui acesso");
-////            chain.doFilter(request, response);
-//        } catch (Exception e) {
-//            response.getWriter().write("Usuário não possui acesso");
-//            response.setStatus(HttpStatus.FORBIDDEN.value());
-//
-//        }
-
-//        try {
-//            System.out.println( client.send(request1, HttpResponse.BodyHandlers.ofString()).statusCode());
-//            if(client.send(request1, HttpResponse.BodyHandlers.ofString()).statusCode()==500)
-//                throw new AutenticationException("Realize a autenticação");
-//        } catch (InterruptedException e) {
-//            throw new AutenticationException(e.getMessage());
-//        }
-
-
     }
-
 
     public String convertObjectToJson(Object object) throws JsonProcessingException {
         if (object == null) {

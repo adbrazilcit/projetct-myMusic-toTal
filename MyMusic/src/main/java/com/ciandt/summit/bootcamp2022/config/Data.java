@@ -1,16 +1,16 @@
 package com.ciandt.summit.bootcamp2022.config;
 
 public class Data {
-    private String nome;
+    private String name;
     private String token;
 
-    public Data(String nome, String token) {
-        this.nome = nome;
+    public Data(String name, String token) {
+        this.name = name;
         this.token = token;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
     public String getToken() {
