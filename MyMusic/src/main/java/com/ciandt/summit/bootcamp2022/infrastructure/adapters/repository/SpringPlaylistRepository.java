@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface SpringPlaylistEntityRepository extends JpaRepository<PlaylistEntity, String> {
+public interface SpringPlaylistRepository extends JpaRepository<PlaylistEntity, String> {
 
     List<PlaylistEntity> findAll();
     Optional<PlaylistEntity> findById(String id);

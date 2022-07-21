@@ -1,26 +1,28 @@
 package com.ciandt.summit.bootcamp2022.domain;
 
-import javax.persistence.Column;
+import com.ciandt.summit.bootcamp2022.infrastructure.adapters.entities.MusicaEntity;
+import com.ciandt.summit.bootcamp2022.infrastructure.adapters.entities.PlaylistEntity;
+import com.ciandt.summit.bootcamp2022.infrastructure.adapters.entities.PlaylistMusicasEntity;
 
 public class PlaylistMusicas {
 
-    private PlayList playlistId;
+    private Playlist playlistId;
 
     private Musica musicaId;
 
     public PlaylistMusicas(){
 
     }
-    public PlaylistMusicas(PlayList playlistId, Musica musicaId) {
+    public PlaylistMusicas(Playlist playlistId, Musica musicaId) {
         this.playlistId = playlistId;
         this.musicaId = musicaId;
     }
 
-    public PlayList getPlaylistId() {
+    public Playlist getPlaylistId() {
         return playlistId;
     }
 
-    public void setPlaylistId(PlayList playlistId) {
+    public void setPlaylistId(Playlist playlistId) {
         this.playlistId = playlistId;
     }
 
@@ -30,5 +32,9 @@ public class PlaylistMusicas {
 
     public void setMusicaId(Musica musicaId) {
         this.musicaId = musicaId;
+    }
+
+    public PlaylistMusicasEntity toEntity(){
+        return new PlaylistMusicasEntity(new PlaylistEntity(this.playlistId), new MusicaEntity(this.musicaId));
     }
 }

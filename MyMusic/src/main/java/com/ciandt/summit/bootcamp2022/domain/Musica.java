@@ -55,8 +55,8 @@ public class Musica {
         this.nome = musicaDTO.getNome();
     }
 
-//    public MusicaDTO toMusicaDTO(){
-//
-//        return new MusicaDTO(this.id, this.nome,this.artistaId);
-//    }
+    public MusicaDTO toMusicaDTO(){
+
+        return new MusicaDTO(this.id, this.nome,this.artistaId);
+    }
 }

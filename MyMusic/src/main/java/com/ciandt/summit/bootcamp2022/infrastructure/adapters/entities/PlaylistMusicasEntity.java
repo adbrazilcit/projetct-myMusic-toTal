@@ -1,7 +1,5 @@
 package com.ciandt.summit.bootcamp2022.infrastructure.adapters.entities;
 
-import com.ciandt.summit.bootcamp2022.domain.Musica;
-import com.ciandt.summit.bootcamp2022.domain.PlayList;
 import com.ciandt.summit.bootcamp2022.domain.PlaylistMusicas;
 
 import javax.persistence.*;
@@ -31,5 +29,7 @@ public class PlaylistMusicasEntity implements Serializable {
         this.musicaId = musicaId;
     }
 
-
+    public PlaylistMusicas toPlaylistMusicas(){
+        return new PlaylistMusicas();
+    }
 }

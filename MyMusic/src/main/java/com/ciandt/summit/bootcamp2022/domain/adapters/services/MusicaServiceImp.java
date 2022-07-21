@@ -5,6 +5,8 @@ import com.ciandt.summit.bootcamp2022.domain.dtos.MusicaDTO;
 import com.ciandt.summit.bootcamp2022.domain.exceptions.NotFoundException;
 import com.ciandt.summit.bootcamp2022.domain.ports.interfaces.MusicaServicePort;
 import com.ciandt.summit.bootcamp2022.domain.ports.repository.MusicaRepositoryPort;
+import com.ciandt.summit.bootcamp2022.infrastructure.adapters.entities.MusicaEntity;
+import com.ciandt.summit.bootcamp2022.infrastructure.adapters.entities.PlaylistEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -44,5 +46,10 @@ public class MusicaServiceImp implements MusicaServicePort {
 
         return  musicas.stream().map(
                 musica -> new MusicaDTO( musica.getId(), musica.getNome(), musica.getArtistaId())).sorted(comparatorNomeArtista.thenComparing(comparatorNomeMusica)).collect(Collectors.toList());
+    }
+
+    @Override
+    public MusicaDTO findMusicById(String param) {
+        return this.musicaRepositoryPort.findMusicById(param).toMusicaDTO();
     }
 }

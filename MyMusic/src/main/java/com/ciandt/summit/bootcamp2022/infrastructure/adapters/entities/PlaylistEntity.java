@@ -1,8 +1,6 @@
 package com.ciandt.summit.bootcamp2022.infrastructure.adapters.entities;
 
-import com.ciandt.summit.bootcamp2022.domain.Artista;
-import com.ciandt.summit.bootcamp2022.domain.Musica;
-import com.ciandt.summit.bootcamp2022.domain.PlayList;
+import com.ciandt.summit.bootcamp2022.domain.Playlist;
 
 import javax.persistence.*;
 
@@ -24,7 +22,11 @@ public class PlaylistEntity {
 
     }
 
-    public PlayList toPlayList(){
-        return new PlayList(this.id);
+    public Playlist toPlayList(){
+        return new Playlist(this.id);
+    }
+
+    public PlaylistEntity(Playlist playlist){
+        this.id = playlist.getId();
     }
 }

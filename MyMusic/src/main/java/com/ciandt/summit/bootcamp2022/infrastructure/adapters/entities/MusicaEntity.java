@@ -2,6 +2,7 @@ package com.ciandt.summit.bootcamp2022.infrastructure.adapters.entities;
 
 import com.ciandt.summit.bootcamp2022.domain.Artista;
 import com.ciandt.summit.bootcamp2022.domain.Musica;
+import com.ciandt.summit.bootcamp2022.domain.Playlist;
 
 import javax.persistence.*;
 
@@ -29,5 +30,11 @@ public class MusicaEntity {
 
     public Musica toMusica(){
         return new Musica(this.id, new Artista(artistas.getId(),artistas.getNome()), this.nome);
+    }
+
+    public MusicaEntity(Musica musica){
+        this.id = musica.getId();
+        this.artistas = new ArtistaEntity(musica.getArtistaId());
+        this.nome = musica.getNome();
     }
 }
