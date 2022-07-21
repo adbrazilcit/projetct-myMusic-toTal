@@ -2,7 +2,6 @@ package com.ciandt.summit.bootcamp2022.config;
 
 import com.ciandt.summit.bootcamp2022.applications.adapters.controllers.exception.AutenticationException;
 import com.ciandt.summit.bootcamp2022.applications.adapters.controllers.exception.ErrorResponse;
-import com.ciandt.summit.bootcamp2022.domain.exceptions.NotFoundException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.http.HttpStatus;
@@ -18,7 +17,6 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.nio.file.Path;
 
 public class TokenFiltro  extends BasicAuthenticationFilter {
 
@@ -34,11 +32,17 @@ public class TokenFiltro  extends BasicAuthenticationFilter {
          //create a client
         HttpClient client = HttpClient.newHttpClient();
 
+        Data userData = new Data(request.getHeader("usuario"), request.getHeader("Authorization"));
+        //System.out.println(user.getNome()+" "+user.getToken());
+        User user = new User(userData);
+        System.out.println(convertObjectToJson(user));
+
         // create a request
         HttpRequest request1 = HttpRequest.newBuilder(
                         URI.create("http://localhost:8081/api/v1/token/authorizer"))
                 .header("Content-Type", "application/json")
-                .POST(HttpRequest.BodyPublishers.ofFile(Path.of("./src/main/resources/data/token.json")))
+                //.POST(HttpRequest.BodyPublishers.ofFile(Path.of("./src/main/resources/data/token.json")))
+                .POST(HttpRequest.BodyPublishers.ofString(convertObjectToJson(user)))
                 .build();
 
 
@@ -55,7 +59,7 @@ public class TokenFiltro  extends BasicAuthenticationFilter {
             chain.doFilter(request, response);
         } catch (Exception e) {
 
-            ErrorResponse errorResponse  =new ErrorResponse();
+            ErrorResponse errorResponse = new ErrorResponse();
             errorResponse.setStatus(HttpStatus.UNAUTHORIZED.value());
             errorResponse.setMessage("Login !!");
 
