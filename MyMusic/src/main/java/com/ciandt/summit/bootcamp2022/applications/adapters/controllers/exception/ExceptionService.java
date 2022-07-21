@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.client.HttpClientErrorException;
 
 import javax.validation.ConstraintViolationException;
 
@@ -31,7 +32,7 @@ public class ExceptionService {
 
         return  new ResponseEntity(errorResponse, HttpStatus.NO_CONTENT);
     }
-    @ExceptionHandler({AutenticationException.class})
+    @ExceptionHandler({RuntimeException.class})
     public ResponseEntity<AutenticationException> semAutenticacao(AutenticationException e){
 
         System.out.println("semAutenticação");
@@ -41,4 +42,6 @@ public class ExceptionService {
 
         return  new ResponseEntity(errorResponse, HttpStatus.UNAUTHORIZED);
     }
+
+
 }

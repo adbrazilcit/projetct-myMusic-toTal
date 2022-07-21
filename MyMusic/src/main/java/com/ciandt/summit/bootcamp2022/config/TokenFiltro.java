@@ -1,7 +1,10 @@
 package com.ciandt.summit.bootcamp2022.config;
 
 import com.ciandt.summit.bootcamp2022.applications.adapters.controllers.exception.AutenticationException;
+import com.ciandt.summit.bootcamp2022.applications.adapters.controllers.exception.ErrorResponse;
 import com.ciandt.summit.bootcamp2022.domain.exceptions.NotFoundException;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
@@ -18,6 +21,7 @@ import java.net.http.HttpResponse;
 import java.nio.file.Path;
 
 public class TokenFiltro  extends BasicAuthenticationFilter {
+
 
     public TokenFiltro(AuthenticationManager authenticationManager) {
         super(authenticationManager);
@@ -41,8 +45,8 @@ public class TokenFiltro  extends BasicAuthenticationFilter {
 
         try {
             System.out.println(client.send(request1, HttpResponse.BodyHandlers.ofString()).statusCode());
-            if(client.send(request1, HttpResponse.BodyHandlers.ofString()).statusCode()==500) {
-                System.out.println("500");
+            if(client.send(request1, HttpResponse.BodyHandlers.ofString()).statusCode()!=201) {
+                System.out.println("Token Error");
                 throw new AutenticationException("Usuário não possui acesso");
 
             }
@@ -50,7 +54,12 @@ public class TokenFiltro  extends BasicAuthenticationFilter {
 
             chain.doFilter(request, response);
         } catch (Exception e) {
-            response.getWriter().write("Usuário não possui acesso");
+
+            ErrorResponse errorResponse  =new ErrorResponse();
+            errorResponse.setStatus(HttpStatus.UNAUTHORIZED.value());
+            errorResponse.setMessage("Login !!");
+
+            response.getWriter().write(convertObjectToJson(errorResponse));
             response.setStatus(HttpStatus.FORBIDDEN.value());
 
         }
@@ -80,5 +89,14 @@ public class TokenFiltro  extends BasicAuthenticationFilter {
 //        }
 
 
+    }
+
+
+    public String convertObjectToJson(Object object) throws JsonProcessingException {
+        if (object == null) {
+            return null;
+        }
+        ObjectMapper mapper = new ObjectMapper();
+        return mapper.writeValueAsString(object);
     }
 }
