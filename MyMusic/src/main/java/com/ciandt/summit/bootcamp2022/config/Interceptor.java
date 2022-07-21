@@ -24,19 +24,19 @@ public class Interceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         // create a client
-        HttpClient client = HttpClient.newHttpClient();
-
-        // create a request
-        HttpRequest request1 = HttpRequest.newBuilder(
-                        URI.create("http://localhost:8081/api/v1/token/authorizer"))
-                .header("Content-Type", "application/json")
-                .POST(HttpRequest.BodyPublishers.ofFile(Path.of("./src/main/resources/data/token.json")))
-                .build();
-
-        log.info("Request: " + request1.toString());
-
-        // send the request
-        client.send(request1, HttpResponse.BodyHandlers.ofString());
+//        HttpClient client = HttpClient.newHttpClient();
+//
+//        // create a request
+//        HttpRequest request1 = HttpRequest.newBuilder(
+//                        URI.create("http://localhost:8081/api/v1/token/authorizer"))
+//                .header("Content-Type", "application/json")
+//                .POST(HttpRequest.BodyPublishers.ofFile(Path.of("./src/main/resources/data/token.json")))
+//                .build();
+//
+//        log.info("Request: " + request1.toString());
+//
+//        // send the request
+//        client.send(request1, HttpResponse.BodyHandlers.ofString());
 
         log.info("Requisição interceptada: " + request.getHeader("Authorization"));
         return true;
