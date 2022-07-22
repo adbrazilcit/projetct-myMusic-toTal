@@ -1,8 +1,7 @@
 package com.ciandt.summit.bootcamp2022.infrastructure.adapters.repository;
 
-import com.ciandt.summit.bootcamp2022.domain.Musica;
 import com.ciandt.summit.bootcamp2022.domain.Playlist;
-import com.ciandt.summit.bootcamp2022.domain.exceptions.NotFoundException;
+import com.ciandt.summit.bootcamp2022.domain.exceptions.BadRequestException;
 import com.ciandt.summit.bootcamp2022.domain.ports.repository.PlaylistRepositoryPort;
 import com.ciandt.summit.bootcamp2022.infrastructure.adapters.entities.MusicaEntity;
 import com.ciandt.summit.bootcamp2022.infrastructure.adapters.entities.PlaylistEntity;
@@ -30,10 +29,10 @@ public class PlaylistRepository implements PlaylistRepositoryPort {
 
         if (playlist.isEmpty()) {
             LOGGER.info("As informações não foram encontradas");
-            throw new NotFoundException("As informações não foram encontradas");
+            throw new BadRequestException("Playlist não encontrada");
         }
 
-        LOGGER.info("Filtrando por: " + playlistId );
+        LOGGER.info("Filtrando por: " + playlistId);
         return playlist.get().toPlayList();
     }
 
@@ -52,9 +51,11 @@ public class PlaylistRepository implements PlaylistRepositoryPort {
 
         Optional<MusicaEntity> musica = this.springMusicaRepository.findById(musicaId);
 
-        LOGGER.info("Musica encontrada " +  musicaId);
+        LOGGER.info("Musica encontrada " + musicaId);
         playlist.get().adicionaMusicasNaPlaylist(musica.get());
 
         this.springPlaylistRepository.save(playlist.get());
+
+        LOGGER.info("Música adicionada com sucesso");
     }
 }

@@ -7,12 +7,15 @@ import java.util.List;
 
 public class Data {
 
+
     @JsonProperty("data")
     private List<MusicaDTO> data;
 
-    public Data(){}
+    public Data() {
+    }
+
     public Data(List<MusicaDTO> dataDTOS) {
-        this.data= dataDTOS;
+        this.data = dataDTOS;
     }
 
     public List<MusicaDTO> getData() {

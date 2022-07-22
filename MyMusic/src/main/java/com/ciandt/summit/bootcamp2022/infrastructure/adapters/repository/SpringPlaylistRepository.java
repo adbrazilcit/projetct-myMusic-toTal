@@ -11,6 +11,7 @@ import java.util.Optional;
 public interface SpringPlaylistRepository extends JpaRepository<PlaylistEntity, String> {
 
     List<PlaylistEntity> findAll();
+
     Optional<PlaylistEntity> findById(String id);
 
 }

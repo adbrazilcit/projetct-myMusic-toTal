@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/token")
 public class ControllerToken {
     @GetMapping(value = "/inter")
-    public String getHealthCheck(){
+    public String getHealthCheck() {
         return "200 ok";
     }
 }

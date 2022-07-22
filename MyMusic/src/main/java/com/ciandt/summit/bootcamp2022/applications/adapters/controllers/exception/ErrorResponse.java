@@ -2,6 +2,7 @@ package com.ciandt.summit.bootcamp2022.applications.adapters.controllers.excepti
 
 public class ErrorResponse {
     private int status;
+
     private String message;
 
 
@@ -12,6 +13,7 @@ public class ErrorResponse {
         this.status = status;
         this.message = message;
     }
+
 
     public int getStatus() {
         return status;

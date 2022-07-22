@@ -16,7 +16,6 @@ public class PlaylistEntity {
     @Column(name = "Id")
     private String id;
 
-
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(
             name = "PlaylistMusicas",
@@ -34,15 +33,15 @@ public class PlaylistEntity {
 
     }
 
-    public Playlist toPlayList(){
-        return new Playlist(this.id);
-    }
-
-    public PlaylistEntity(Playlist playlist){
+    public PlaylistEntity(Playlist playlist) {
         this.id = playlist.getId();
     }
 
-    public void adicionaMusicasNaPlaylist(MusicaEntity musica){
+    public Playlist toPlayList() {
+        return new Playlist(this.id);
+    }
+
+    public void adicionaMusicasNaPlaylist(MusicaEntity musica) {
         this.musicas.add(musica);
     }
 }
