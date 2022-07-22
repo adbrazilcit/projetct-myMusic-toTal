@@ -6,10 +6,10 @@ import java.util.List;
 
 
 public interface PlaylistServicePort {
-       List<Playlist> findAll();
+    List<Playlist> findAll();
 
-       Playlist findPlaylistById(String id);
+    Playlist findPlaylistById(String id);
 
-       void addMusicInPlaylist(String playlistId, String musicaId);
+    void addMusicInPlaylist(String playlistId, String musicaId);
 
 }

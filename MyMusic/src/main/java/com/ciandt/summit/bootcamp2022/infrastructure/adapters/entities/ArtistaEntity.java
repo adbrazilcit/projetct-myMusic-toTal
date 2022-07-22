@@ -18,12 +18,18 @@ public class ArtistaEntity {
     @Column(name = "Nome")
     private String nome;
 
-    public ArtistaEntity(){
+    public ArtistaEntity() {
     }
 
     public ArtistaEntity(String id, String nome) {
         this.id = id;
         this.nome = nome;
+    }
+
+    public ArtistaEntity(Artista artista) {
+        this.id = artista.getId();
+        ;
+        this.nome = artista.getNome();
     }
 
     public String getId() {
@@ -48,10 +54,5 @@ public class ArtistaEntity {
                 "id='" + id + '\'' +
                 ", nome='" + nome + '\'' +
                 '}';
-    }
-
-    public ArtistaEntity(Artista artista){
-        this.id = artista.getId();;
-        this.nome = artista.getNome();
     }
 }

@@ -2,7 +2,6 @@ package com.ciandt.summit.bootcamp2022.domain.adapters.services;
 
 import com.ciandt.summit.bootcamp2022.domain.Musica;
 import com.ciandt.summit.bootcamp2022.domain.Playlist;
-import com.ciandt.summit.bootcamp2022.domain.dtos.MusicaDTO;
 import com.ciandt.summit.bootcamp2022.domain.exceptions.NotFoundException;
 import com.ciandt.summit.bootcamp2022.domain.ports.interfaces.MusicaServicePort;
 import com.ciandt.summit.bootcamp2022.domain.ports.interfaces.PlaylistServicePort;
@@ -11,9 +10,7 @@ import com.ciandt.summit.bootcamp2022.domain.ports.repository.PlaylistRepository
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class PlaylistServiceImp implements PlaylistServicePort {
@@ -27,13 +24,12 @@ public class PlaylistServiceImp implements PlaylistServicePort {
     @Autowired
     private MusicaServicePort musicaServicePort;
 
-
     @Override
     public List<Playlist> findAll() {
         List<Playlist> playlists = this.playlistRepositoryPort.findAll();
 
-        if(playlists.isEmpty())
-            throw  new NotFoundException("As informações não foram encontradas");
+        if (playlists.isEmpty())
+            throw new NotFoundException("As informações não foram encontradas");
 
         return playlists;
     }
@@ -48,9 +44,9 @@ public class PlaylistServiceImp implements PlaylistServicePort {
         Musica musica = musicaServicePort.findMusicById(musicaId).toMusic();
         Playlist playlist = playlistRepositoryPort.findById(playlistId);
 
-        if(playlist == null){
+        if (playlist == null) {
             throw new NotFoundException("Playlist não encontrada!");
-        }else if(musica == null){
+        } else if (musica == null) {
             throw new NotFoundException("Música não encontrada!");
         }
 

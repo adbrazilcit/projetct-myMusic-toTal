@@ -3,13 +3,11 @@ package com.ciandt.summit.bootcamp2022.domain;
 public class Playlist {
     private String id;
 
-
     public Playlist() {
     }
 
     public Playlist(String id) {
         this.id = id;
-
     }
 
     public String getId() {

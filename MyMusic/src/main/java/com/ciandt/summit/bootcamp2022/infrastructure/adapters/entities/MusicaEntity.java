@@ -5,17 +5,18 @@ import com.ciandt.summit.bootcamp2022.domain.Musica;
 
 import javax.persistence.*;
 
+
 @Entity
 @Table(name = "Musicas")
 public class MusicaEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="Id")
+    @Column(name = "Id")
     private String id;
     @ManyToOne
-    @JoinColumn(name="ArtistaId")
+    @JoinColumn(name = "ArtistaId")
     private ArtistaEntity artistas;
-    @Column(name="Nome")
+    @Column(name = "Nome")
     private String nome;
 
     public MusicaEntity() {
@@ -27,13 +28,13 @@ public class MusicaEntity {
         this.nome = nome;
     }
 
-    public Musica toMusica(){
-        return new Musica(this.id, new Artista(artistas.getId(),artistas.getNome()), this.nome);
-    }
-
-    public MusicaEntity(Musica musica){
+    public MusicaEntity(Musica musica) {
         this.id = musica.getId();
         this.artistas = new ArtistaEntity(musica.getArtistaId());
         this.nome = musica.getNome();
+    }
+
+    public Musica toMusica() {
+        return new Musica(this.id, new Artista(artistas.getId(), artistas.getNome()), this.nome);
     }
 }

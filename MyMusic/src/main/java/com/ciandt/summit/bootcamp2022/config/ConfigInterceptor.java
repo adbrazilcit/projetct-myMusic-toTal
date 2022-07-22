@@ -9,7 +9,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class ConfigInterceptor implements WebMvcConfigurer {
 
-    private  final  Interceptor inperceptor;
+    private final Interceptor inperceptor;
 
     public ConfigInterceptor(Interceptor inperceptor) {
         this.inperceptor = inperceptor;
