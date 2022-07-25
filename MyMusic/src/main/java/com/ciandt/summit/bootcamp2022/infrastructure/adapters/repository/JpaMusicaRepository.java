@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface SpringMusicaRepository extends JpaRepository<MusicaEntity, String> {
+public interface JpaMusicaRepository extends JpaRepository<MusicaEntity, String> {
 
     List<MusicaEntity> findByNomeContainingIgnoreCase(String nome);
 

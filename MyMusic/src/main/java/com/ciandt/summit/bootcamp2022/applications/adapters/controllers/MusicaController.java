@@ -12,7 +12,6 @@ import javax.validation.ConstraintViolationException;
 import java.util.Optional;
 import java.util.logging.Logger;
 
-
 @RestController
 @RequestMapping("/api")
 public class MusicaController {
@@ -38,5 +37,4 @@ public class MusicaController {
 
         return new Data(this.musicaServicePort.findMusicByFilter(filtro.get()));
     }
-
 }

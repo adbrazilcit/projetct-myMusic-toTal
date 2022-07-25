@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface SpringArtistaRepository extends JpaRepository<ArtistaEntity, String> {
+public interface JpaArtistaRepository extends JpaRepository<ArtistaEntity, String> {
 
     List<ArtistaEntity> findByNomeContainingIgnoreCase(String nome);
 }

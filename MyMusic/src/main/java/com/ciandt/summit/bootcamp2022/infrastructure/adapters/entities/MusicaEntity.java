@@ -5,7 +5,6 @@ import com.ciandt.summit.bootcamp2022.domain.Musica;
 
 import javax.persistence.*;
 
-
 @Entity
 @Table(name = "Musicas")
 public class MusicaEntity {
@@ -13,9 +12,11 @@ public class MusicaEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "Id")
     private String id;
+
     @ManyToOne
     @JoinColumn(name = "ArtistaId")
     private ArtistaEntity artistas;
+
     @Column(name = "Nome")
     private String nome;
 

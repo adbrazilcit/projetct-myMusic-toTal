@@ -2,21 +2,15 @@ package com.ciandt.summit.bootcamp2022.applications.adapters.controllers.excepti
 
 import com.ciandt.summit.bootcamp2022.domain.exceptions.BadRequestException;
 import com.ciandt.summit.bootcamp2022.domain.exceptions.NotFoundException;
-
-import org.springframework.http.HttpHeaders;
-
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
-
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
-
-import org.springframework.web.client.HttpClientErrorException;
 
 import javax.validation.ConstraintViolationException;
 
@@ -51,15 +45,16 @@ public class ExceptionService extends ResponseEntityExceptionHandler {
         errorResponse.setMessage(ex.getMessage());
         return handleExceptionInternal(ex, errorResponse, new HttpHeaders(), status, request);
     }
+
     @ExceptionHandler({RuntimeException.class})
-    public ResponseEntity<AutenticationException> semAutenticacao(AutenticationException e){
+    public ResponseEntity<AutenticationException> semAutenticacao(AutenticationException e) {
 
         System.out.println("semAutenticação");
-        ErrorResponse errorResponse  =new ErrorResponse();
+        ErrorResponse errorResponse = new ErrorResponse();
         errorResponse.setStatus(HttpStatus.UNAUTHORIZED.value());
         errorResponse.setMessage("Não Possui acesso, realize a autenticação ");
 
-        return  new ResponseEntity(errorResponse, HttpStatus.UNAUTHORIZED);
+        return new ResponseEntity(errorResponse, HttpStatus.UNAUTHORIZED);
     }
 
 
