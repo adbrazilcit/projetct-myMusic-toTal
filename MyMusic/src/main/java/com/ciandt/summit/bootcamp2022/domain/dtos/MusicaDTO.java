@@ -1,41 +1,50 @@
 package com.ciandt.summit.bootcamp2022.domain.dtos;
 
 import com.ciandt.summit.bootcamp2022.domain.Artista;
+import com.ciandt.summit.bootcamp2022.domain.Musica;
 
 public class MusicaDTO {
-       String id;
-       String nome;
 
-       Artista artista;
+    String id;
 
+    String nome;
 
-       public Artista getArtista() {
-              return artista;
-       }
+    Artista artista;
 
-       public void setArtista(Artista artista) {
-              this.artista = artista;
-       }
+    public MusicaDTO() {
+    }
 
-       public String getId() {
-              return id;
-       }
+    public MusicaDTO(String id, String nome, Artista artista) {
+        this.id = id;
+        this.nome = nome;
+        this.artista = artista;
+    }
 
-       public void setId(String id) {
-              this.id = id;
-       }
+    public Artista getArtista() {
+        return artista;
+    }
 
-       public String getNome() {
-              return nome;
-       }
+    public void setArtista(Artista artista) {
+        this.artista = artista;
+    }
 
-       public void setNome(String nome) {
-              this.nome = nome;
-       }
+    public String getId() {
+        return id;
+    }
 
-       public MusicaDTO(String id, String nome, Artista artista) {
-              this.id = id;
-              this.nome = nome;
-              this.artista = artista;
-       }
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public Musica toMusic() {
+        return new Musica(this.id, this.artista, this.nome);
+    }
 }

@@ -16,33 +16,38 @@ import java.util.stream.Collectors;
 public class MusicaServiceImp implements MusicaServicePort {
 
     @Autowired
-    private  MusicaRepositoryPort musicaRepositoryPort;
+    private MusicaRepositoryPort musicaRepositoryPort;
 
     @Override
     public List<MusicaDTO> findMusicByFilter(String filtro) {
         List<Musica> musicas = this.musicaRepositoryPort.findByFilter(filtro);
 
-        if(musicas.isEmpty())
-            throw  new NotFoundException("As informações não foram encontradas");
+        if (musicas.isEmpty())
+            throw new NotFoundException("As informações não foram encontradas");
 
         Comparator<MusicaDTO> comparatorNomeArtista = (p1, p2) -> p1.getArtista().getNome().compareTo(p2.getArtista().getNome());
-        Comparator<MusicaDTO> comparatorNomeMusica =  (a1, a2) -> a1.getNome().compareTo(a2.getNome());
+        Comparator<MusicaDTO> comparatorNomeMusica = (a1, a2) -> a1.getNome().compareTo(a2.getNome());
 
-        return  musicas.stream().map(
-                musica -> new MusicaDTO( musica.getId(), musica.getNome(), musica.getArtistaId())).sorted(comparatorNomeArtista.thenComparing(comparatorNomeMusica)).collect(Collectors.toList());
+        return musicas.stream().map(
+                musica -> new MusicaDTO(musica.getId(), musica.getNome(), musica.getArtistaId())).sorted(comparatorNomeArtista.thenComparing(comparatorNomeMusica)).collect(Collectors.toList());
     }
 
     @Override
     public List<MusicaDTO> findAll() {
         List<Musica> musicas = this.musicaRepositoryPort.findAll();
 
-        if(musicas.isEmpty())
-            throw  new NotFoundException("As informações não foram encontradas");
+        if (musicas.isEmpty())
+            throw new NotFoundException("As informações não foram encontradas");
 
         Comparator<MusicaDTO> comparatorNomeArtista = (p1, p2) -> p1.getArtista().getNome().compareTo(p2.getArtista().getNome());
-        Comparator<MusicaDTO> comparatorNomeMusica =  (a1, a2) -> a1.getNome().compareTo(a2.getNome());
+        Comparator<MusicaDTO> comparatorNomeMusica = (a1, a2) -> a1.getNome().compareTo(a2.getNome());
 
-        return  musicas.stream().map(
-                musica -> new MusicaDTO( musica.getId(), musica.getNome(), musica.getArtistaId())).sorted(comparatorNomeArtista.thenComparing(comparatorNomeMusica)).collect(Collectors.toList());
+        return musicas.stream().map(
+                musica -> new MusicaDTO(musica.getId(), musica.getNome(), musica.getArtistaId())).sorted(comparatorNomeArtista.thenComparing(comparatorNomeMusica)).collect(Collectors.toList());
+    }
+
+    @Override
+    public MusicaDTO findMusicById(String param) {
+        return this.musicaRepositoryPort.findMusicById(param).toMusicaDTO();
     }
 }

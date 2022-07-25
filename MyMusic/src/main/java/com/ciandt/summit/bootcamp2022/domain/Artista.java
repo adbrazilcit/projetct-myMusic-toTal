@@ -3,9 +3,10 @@ package com.ciandt.summit.bootcamp2022.domain;
 public class Artista {
 
     private String id;
+
     private String nome;
 
-    public Artista(){
+    public Artista() {
     }
 
     public Artista(String id, String nome) {
@@ -36,13 +37,5 @@ public class Artista {
                 ", nome='" + nome + '\'' +
                 '}';
     }
-//    public Artista(ArtistaDTO artistaDTO){
-//        this.id = artistaDTO.getId;
-//        this.nome = artistaDTO.getNome;
-//    }
-//
-//    public ArtistaDTO toArtistaDTO(){
-//        return new ArtistaDTO(this.id, this.nome);
-//    }
 }
 

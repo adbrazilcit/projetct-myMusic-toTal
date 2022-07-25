@@ -16,7 +16,7 @@ public class SwaggerConfiguration extends WebMvcConfigurationSupport {
 
     @Bean
     public Docket docket() {
-        return  new Docket(DocumentationType.SWAGGER_2)
+        return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .apis(RequestHandlerSelectors.any())
                 .paths(PathSelectors.any())
@@ -31,5 +31,4 @@ public class SwaggerConfiguration extends WebMvcConfigurationSupport {
         registry.addResourceHandler("/webjars/**")
                 .addResourceLocations("classpath:/META-INF/resources/webjars/");
     }
-
 }

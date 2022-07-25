@@ -1,5 +1,7 @@
 package com.ciandt.summit.bootcamp2022.infrastructure.adapters.entities;
 
+import com.ciandt.summit.bootcamp2022.domain.Artista;
+
 import javax.persistence.*;
 
 @Entity
@@ -12,16 +14,21 @@ public class ArtistaEntity {
     @Column(name = "Id")
     private String id;
 
-
     @Column(name = "Nome")
     private String nome;
 
-    public ArtistaEntity(){
+    public ArtistaEntity() {
     }
 
     public ArtistaEntity(String id, String nome) {
         this.id = id;
         this.nome = nome;
+    }
+
+    public ArtistaEntity(Artista artista) {
+        this.id = artista.getId();
+        ;
+        this.nome = artista.getNome();
     }
 
     public String getId() {

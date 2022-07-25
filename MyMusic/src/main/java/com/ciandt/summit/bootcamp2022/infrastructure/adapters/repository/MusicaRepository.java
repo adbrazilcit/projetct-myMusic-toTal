@@ -1,6 +1,7 @@
 package com.ciandt.summit.bootcamp2022.infrastructure.adapters.repository;
 
 import com.ciandt.summit.bootcamp2022.domain.Musica;
+import com.ciandt.summit.bootcamp2022.domain.exceptions.BadRequestException;
 import com.ciandt.summit.bootcamp2022.domain.exceptions.NotFoundException;
 import com.ciandt.summit.bootcamp2022.domain.ports.repository.MusicaRepositoryPort;
 import com.ciandt.summit.bootcamp2022.infrastructure.adapters.entities.ArtistaEntity;
@@ -18,10 +19,10 @@ public class MusicaRepository implements MusicaRepositoryPort {
     private static final Logger LOGGER = Logger.getLogger(MusicaRepository.class.getName());
 
     @Autowired
-    private SpringMusicaRepository springMusicaRepository;
+    private JpaMusicaRepository springMusicaRepository;
 
     @Autowired
-    private SpringArtistaRepository springArtistaRepository;
+    private JpaArtistaRepository springArtistaRepository;
 
     @Override
     public List<Musica> findByFilter(String filtro) {
@@ -50,4 +51,18 @@ public class MusicaRepository implements MusicaRepositoryPort {
         return musicaEntity.stream().map(MusicaEntity::toMusica).collect(Collectors.toList());
     }
 
+    public Musica findMusicById(String musicId) {
+
+        if (musicId == null) {
+            LOGGER.info("ID da Música incorreto");
+            throw new BadRequestException("Id não informado");
+        }
+
+        if (this.springMusicaRepository.findById(musicId).isEmpty()) {
+            LOGGER.info("Música não existe");
+            throw new BadRequestException("Música não existe no banco de dados");
+        }
+
+        return this.springMusicaRepository.findById(musicId).get().toMusica();
+    }
 }
