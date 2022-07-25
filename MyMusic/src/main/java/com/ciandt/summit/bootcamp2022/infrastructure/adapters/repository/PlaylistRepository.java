@@ -18,10 +18,10 @@ import static org.hibernate.tool.schema.SchemaToolingLogging.LOGGER;
 public class PlaylistRepository implements PlaylistRepositoryPort {
 
     @Autowired
-    private SpringPlaylistRepository springPlaylistRepository;
+    private JpaPlaylistRepository springPlaylistRepository;
 
     @Autowired
-    private SpringMusicaRepository springMusicaRepository;
+    private JpaMusicaRepository springMusicaRepository;
 
     @Override
     public Playlist findById(String playlistId) {

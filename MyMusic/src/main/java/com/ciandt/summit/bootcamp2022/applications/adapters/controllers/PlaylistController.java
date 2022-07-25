@@ -1,5 +1,6 @@
 package com.ciandt.summit.bootcamp2022.applications.adapters.controllers;
 
+import com.ciandt.summit.bootcamp2022.domain.dtos.MusicaDTO;
 import com.ciandt.summit.bootcamp2022.domain.ports.interfaces.PlaylistServicePort;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,7 +19,7 @@ public class PlaylistController {
     private PlaylistServicePort playlistServicePort;
 
     @PostMapping("/{playlistId}/musicas")
-    public ResponseEntity<Data> addMusica(@PathVariable("playlistId") String playlistId, @RequestBody Data data) {
+    public ResponseEntity<Data> addMusica(@PathVariable("playlistId") String playlistId, @RequestBody Data<MusicaDTO> data) {
 
         String musicaId = data.getData().get(0).getId();
 

@@ -22,6 +22,7 @@ public class PlaylistEntity {
             joinColumns = {@JoinColumn(name = "PlaylistId")},
             inverseJoinColumns = {@JoinColumn(name = "MusicaId")}
     )
+
     private List<MusicaEntity> musicas = new ArrayList<>();
 
 
@@ -30,7 +31,6 @@ public class PlaylistEntity {
 
     public PlaylistEntity(String id) {
         this.id = id;
-
     }
 
     public PlaylistEntity(Playlist playlist) {

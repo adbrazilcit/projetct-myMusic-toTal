@@ -19,10 +19,10 @@ public class MusicaRepository implements MusicaRepositoryPort {
     private static final Logger LOGGER = Logger.getLogger(MusicaRepository.class.getName());
 
     @Autowired
-    private SpringMusicaRepository springMusicaRepository;
+    private JpaMusicaRepository springMusicaRepository;
 
     @Autowired
-    private SpringArtistaRepository springArtistaRepository;
+    private JpaArtistaRepository springArtistaRepository;
 
     @Override
     public List<Musica> findByFilter(String filtro) {

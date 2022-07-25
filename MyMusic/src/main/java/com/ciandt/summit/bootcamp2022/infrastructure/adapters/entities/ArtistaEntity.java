@@ -14,7 +14,6 @@ public class ArtistaEntity {
     @Column(name = "Id")
     private String id;
 
-
     @Column(name = "Nome")
     private String nome;
 
