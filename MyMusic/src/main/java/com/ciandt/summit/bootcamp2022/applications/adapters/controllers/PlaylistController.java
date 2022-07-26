@@ -27,4 +27,12 @@ public class PlaylistController {
 
         return new ResponseEntity<>(data, HttpStatus.CREATED);
     }
+
+    @DeleteMapping("/{playlistId}/musicas/{musicaId}")
+    public ResponseEntity<Data> delMusica(@PathVariable("playlistId") String playlistId, @PathVariable("musicaId") String musicaId) {
+
+        this.playlistServicePort.removeMusicFromPlaylist(playlistId, musicaId);
+
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 }
