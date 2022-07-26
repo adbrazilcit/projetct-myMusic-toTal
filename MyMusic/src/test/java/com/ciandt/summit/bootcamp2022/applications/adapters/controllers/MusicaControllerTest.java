@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
@@ -24,6 +25,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @ExtendWith(SpringExtension.class)
 @WebMvcTest(MusicaController.class)
 @AutoConfigureMockMvc(addFilters = false)
+@ActiveProfiles("test")
 public class MusicaControllerTest {
 
     @Autowired
@@ -33,7 +35,7 @@ public class MusicaControllerTest {
     private MusicaServicePort musicaServicePort;
 
     @Test
-    void retornaNoContentQuandoNaoEncontrarFiltro() throws Exception {
+    void returnNoContentWhenFilterNotFound() throws Exception {
 
         MockHttpServletRequestBuilder request = get("/api/musicas?filtro=andreus");
         BDDMockito.given(musicaServicePort.findMusicByFilter("andreus")).willThrow(new NotFoundException("As informações não foram encontradas"));
@@ -52,7 +54,7 @@ public class MusicaControllerTest {
     void retornaArrayPreechidoAllQuandoPassadoSemfiltro() throws Exception {
 
         MockHttpServletRequestBuilder request = get("/api/musicas");
-        BDDMockito.given(musicaServicePort.findMusicByFilter("bruno")).willReturn(new ArrayList<MusicaDTO>());
+        BDDMockito.given(musicaServicePort.findAll()).willReturn(new ArrayList<MusicaDTO>());
         mvc.perform(request).andExpect(status().isOk());
     }
 
