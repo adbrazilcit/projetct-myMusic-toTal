@@ -46,7 +46,7 @@ public class PlaylistControllerTest {
     @MockBean
     private PlaylistServicePort playlistServicePort;
 
-    public Musica createMusica(){
+    public Musica createMusica() {
         Musica musica = new Musica();
         musica.setId("12659604-a4a1-4c4c-8a5f-29fff1ad2ac5");
         musica.setNome("24K Magic");
