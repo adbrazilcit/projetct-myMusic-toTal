@@ -1,6 +1,7 @@
-./MyMusic/.idea/
-./MyMusic/target/
-./TokenProvider/logs/
-./TokenProvider/.idea/
-./.idea
+MyMusic/.idea/
+MyMusic/target/
+TokenProvider/logs/
+TokenProvider/target/
+TokenProvider/.idea/
+.idea
 
