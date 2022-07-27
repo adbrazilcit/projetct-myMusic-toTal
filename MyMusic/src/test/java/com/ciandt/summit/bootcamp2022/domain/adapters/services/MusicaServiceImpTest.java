@@ -42,10 +42,6 @@ public class MusicaServiceImpTest {
     @MockBean
     private MusicaRepositoryPort repository;
 
-    @BeforeEach
-    public void setUp(){
-
-    }
 
 
     @Test
