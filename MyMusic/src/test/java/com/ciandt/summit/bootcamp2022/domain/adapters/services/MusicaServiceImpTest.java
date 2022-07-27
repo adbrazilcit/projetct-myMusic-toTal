@@ -26,7 +26,6 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 @ActiveProfiles("test")
 @SpringBootTest
 public class MusicaServiceImpTest {
-
     @Autowired
     private MusicaServicePort service;
 

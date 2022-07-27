@@ -1,18 +1,14 @@
 package com.ciandt.summit.bootcamp2022.applications.adapters.controllers;
 
 import com.ciandt.summit.bootcamp2022.domain.Artista;
-
 import com.ciandt.summit.bootcamp2022.domain.Musica;
-
 import com.ciandt.summit.bootcamp2022.domain.Playlist;
 import com.ciandt.summit.bootcamp2022.domain.dtos.MusicaDTO;
 import com.ciandt.summit.bootcamp2022.domain.exceptions.BadRequestException;
 import com.ciandt.summit.bootcamp2022.domain.ports.interfaces.MusicaServicePort;
 import com.ciandt.summit.bootcamp2022.domain.ports.interfaces.PlaylistServicePort;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.DisplayName;
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.BDDMockito;
@@ -20,7 +16,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
@@ -32,11 +27,6 @@ import java.util.List;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.willThrow;
-
-import org.springframework.test.context.junit.jupiter.SpringExtension;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
-
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -47,9 +37,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class PlaylistControllerTest {
 
     static final String PLAYLIST_API = "/api/playlists";
-
-class PlaylistControllerTest {
-
 
     @Autowired
     private MockMvc mvc;
@@ -127,12 +114,10 @@ class PlaylistControllerTest {
 
         this.mvc.perform(request)
                 .andExpect(status().isBadRequest());
-    private PlaylistServicePort playlistServicePort;
-
-    @MockBean
-    private MusicaServicePort musicaServicePort;
+    }
 
     @Test
+    @DisplayName("Deve remover uma musica de uma playlist")
     void ShouldRemoveAMusicFromPlaylist() throws Exception {
         BDDMockito
                 .given(playlistServicePort.findPlaylistById("a39926f4-6acb-4497-884f-d4e5296ef652"))
@@ -146,6 +131,7 @@ class PlaylistControllerTest {
     }
 
     @Test
+    @DisplayName("Deve retornar bad request ao remover uma musica de uma playlist inexistente")
     void ShouldReturnA400IfPlaylistNoExists() throws Exception {
         BDDMockito
                 .given(playlistServicePort.findPlaylistById("15151515151515115"))
@@ -160,6 +146,7 @@ class PlaylistControllerTest {
     }
 
     @Test
+    @DisplayName("Deve retornar bad request ao remover uma musica que não existe")
     void ShouldReturnA400IfMusicNoExists() throws Exception {
         BDDMockito
                 .given(playlistServicePort.findPlaylistById("a39926f4-6acb-4497-884f-d4e5296ef652"))

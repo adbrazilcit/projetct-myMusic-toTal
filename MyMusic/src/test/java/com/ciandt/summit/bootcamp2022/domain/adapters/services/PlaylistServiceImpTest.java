@@ -124,5 +124,4 @@ public class PlaylistServiceImpTest {
 
         assertThat(playlist.getId()).isNotEmpty();
     }
-
 }

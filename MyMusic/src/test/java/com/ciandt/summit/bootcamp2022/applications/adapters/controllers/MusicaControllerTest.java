@@ -22,7 +22,6 @@ import java.util.ArrayList;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-
 @ExtendWith(SpringExtension.class)
 @WebMvcTest(MusicaController.class)
 @AutoConfigureMockMvc(addFilters = false)
