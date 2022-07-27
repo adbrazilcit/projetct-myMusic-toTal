@@ -45,6 +45,9 @@ public class MusicaDTO {
     }
 
     public Musica toMusic() {
+        if(this==null){
+            return null;
+        }
         return new Musica(this.id, this.artista, this.nome);
     }
 }

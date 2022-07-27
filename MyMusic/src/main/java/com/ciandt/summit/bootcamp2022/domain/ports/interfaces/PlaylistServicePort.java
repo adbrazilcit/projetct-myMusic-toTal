@@ -12,4 +12,5 @@ public interface PlaylistServicePort {
 
     void addMusicInPlaylist(String playlistId, String musicaId);
 
+    void removeMusicaDaPlaylist(String playlistId, String musicaId);
 }
