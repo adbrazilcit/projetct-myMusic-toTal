@@ -36,7 +36,6 @@ public class MusicaServiceImpTest {
 
     @BeforeEach
     public void setUp() {
-
     }
 
     @Test
@@ -59,7 +58,7 @@ public class MusicaServiceImpTest {
     @Test
     @DisplayName("Deve buscar uma Lista de músicas por filtro e retornar as informações de retorno de acordo com a lista mockada")
     public void findMusicByFilterWithRightReturn() {
-        List<Musica> m = new ArrayList<Musica>();
+        List<Musica> m = new ArrayList<>();
         m.add(new Musica("25e9839b-0d17-480c-a0ae-36a54fea2c30", new Artista("bf870f08-4fd3-4b00-98a7-3997996cd306", "Metallica"), "Welcome Home (Sanitarium)"));
         m.add(new Musica("c79afa2c-f9be-47b7-b1e1-1057bac049e8", new Artista("7ada007e-c740-40ea-8229-c45e4953a8b3", "Pearl Jam"), "Aye Davanita"));
         m.add(new Musica("38f89d5b-725c-4913-b404-c3fb69c06d37", new Artista("d7b1794f-6104-49d3-b742-7397012d85b8", "Prince"), "Juanita"));
@@ -72,14 +71,13 @@ public class MusicaServiceImpTest {
 
         List<MusicaDTO> musicaBuscadas = this.service.findMusicByFilter(filtroMusica);
 
-
         assertEquals(m.size(), musicaBuscadas.size());
     }
 
     @Test
     @DisplayName("Deve buscar uma música por filtro e  retorna um resultado diferente da lista mockada")
     public void findMusicByFilterWithWrongReturn() {
-        List<Musica> m = new ArrayList<Musica>();
+        List<Musica> m = new ArrayList<>();
         m.add(new Musica("25e9839b-0d17-480c-a0ae-36a54fea2c30", new Artista("bf870f08-4fd3-4b00-98a7-3997996cd306", "Metallica"), "Welcome Home (Sanitarium)"));
         m.add(new Musica("c79afa2c-f9be-47b7-b1e1-1057bac049e8", new Artista("7ada007e-c740-40ea-8229-c45e4953a8b3", "Pearl Jam"), "Aye Davanita"));
         m.add(new Musica("38f89d5b-725c-4913-b404-c3fb69c06d37", new Artista("d7b1794f-6104-49d3-b742-7397012d85b8", "Prince"), "Juanita"));
@@ -95,15 +93,14 @@ public class MusicaServiceImpTest {
         assertNotEquals(2, musicaBuscadas.size());
     }
 
-
     @Test
     @DisplayName("Deve lançar uma exceção porque a música buscada não foi encontrada")
-    public void findMusicByFilterNoMatcher() throws Exception {
+    public void findMusicByFilterNoMatcher() {
 
         String filtroMusica = "filtroNaoExistente";
 
         Mockito.when(repository.findByFilter(filtroMusica)).thenReturn(
-                new ArrayList<Musica>()
+                new ArrayList<>()
         );
 
         try {
@@ -114,12 +111,17 @@ public class MusicaServiceImpTest {
         }
     }
 
-
     @Test
     @DisplayName("Deve trazer todos as músicas presentes no banco")
-    public void findAll() throws Exception {
+    public void findAll() {
+
+        List<Musica> m = new ArrayList<>();
+        m.add(new Musica("25e9839b-0d17-480c-a0ae-36a54fea2c30", new Artista("bf870f08-4fd3-4b00-98a7-3997996cd306", "Metallica"), "Welcome Home (Sanitarium)"));
+        m.add(new Musica("c79afa2c-f9be-47b7-b1e1-1057bac049e8", new Artista("7ada007e-c740-40ea-8229-c45e4953a8b3", "Pearl Jam"), "Aye Davanita"));
+        m.add(new Musica("38f89d5b-725c-4913-b404-c3fb69c06d37", new Artista("d7b1794f-6104-49d3-b742-7397012d85b8", "Prince"), "Juanita"));
+
         Mockito.when(repository.findAll()).thenReturn(
-                new ArrayList<Musica>()
+                m
         );
 
         try {
@@ -130,13 +132,12 @@ public class MusicaServiceImpTest {
         }
     }
 
-
     @Test
     @DisplayName("Deve lançar uma exceção porque a música buscada não foi encontrada")
-    public void findAllNoMatcher() throws Exception {
+    public void findAllNoMatcher() {
 
         Mockito.when(repository.findAll()).thenReturn(
-                new ArrayList<Musica>()
+                new ArrayList<>()
         );
 
         try {
