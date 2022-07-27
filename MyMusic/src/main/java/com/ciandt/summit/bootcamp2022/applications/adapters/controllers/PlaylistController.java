@@ -19,7 +19,7 @@ public class PlaylistController {
     private PlaylistServicePort playlistServicePort;
 
     @PostMapping("/{playlistId}/musicas")
-    public ResponseEntity<Data> addMusica(@PathVariable("playlistId") String playlistId, @RequestBody Data<MusicaDTO> data) {
+    public ResponseEntity<Data> addMusic(@PathVariable("playlistId") String playlistId, @RequestBody Data<MusicaDTO> data) {
 
         String musicaId = data.getData().get(0).getId();
 
@@ -29,7 +29,7 @@ public class PlaylistController {
     }
 
     @DeleteMapping("/{playlistId}/musicas/{musicaId}")
-    public ResponseEntity<Data> delMusica(@PathVariable("playlistId") String playlistId, @PathVariable("musicaId") String musicaId) {
+    public ResponseEntity<Data> deleteMusic(@PathVariable("playlistId") String playlistId, @PathVariable("musicaId") String musicaId) {
 
         this.playlistServicePort.removeMusicFromPlaylist(playlistId, musicaId);
 
