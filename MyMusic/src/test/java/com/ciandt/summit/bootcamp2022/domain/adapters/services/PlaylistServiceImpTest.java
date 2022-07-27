@@ -39,7 +39,7 @@ public class PlaylistServiceImpTest {
     private MusicaServicePort musicaServicePort;
 
     @BeforeEach
-    public void setUp(){
+    public void setUp() {
     }
 
     @Test
@@ -84,7 +84,7 @@ public class PlaylistServiceImpTest {
 
 
     @Test
-    void shouldThrowNotFoundIfPlaylistIsEmpty(){
+    void shouldThrowNotFoundIfPlaylistIsEmpty() {
         Playlist playlist = new Playlist();
         playlist.setId(" ");
 

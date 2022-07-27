@@ -36,7 +36,6 @@ public class MusicaControllerTest {
 
     @Test
     void returnNoContentWhenFilterNotFound() throws Exception {
-
         MockHttpServletRequestBuilder request = get("/api/musicas?filtro=andreus");
         BDDMockito.given(musicaServicePort.findMusicByFilter("andreus")).willThrow(new NotFoundException("As informações não foram encontradas"));
         mvc.perform(request).andExpect(status().isNoContent());
@@ -44,7 +43,6 @@ public class MusicaControllerTest {
 
     @Test
     void retornaArrayQuandoEncontrarFiltro() throws Exception {
-
         MockHttpServletRequestBuilder request = get("/api/musicas?filtro=bruno");
         BDDMockito.given(musicaServicePort.findMusicByFilter("bruno")).willReturn(new ArrayList<MusicaDTO>());
         mvc.perform(request).andExpect(status().isOk());
@@ -52,7 +50,6 @@ public class MusicaControllerTest {
 
     @Test
     void retornaArrayPreechidoAllQuandoPassadoSemfiltro() throws Exception {
-
         MockHttpServletRequestBuilder request = get("/api/musicas");
         BDDMockito.given(musicaServicePort.findAll()).willReturn(new ArrayList<MusicaDTO>());
         mvc.perform(request).andExpect(status().isOk());
@@ -60,7 +57,6 @@ public class MusicaControllerTest {
 
     @Test
     void retornaErro400QuandoFiltroMenorQue3Caracter() throws Exception {
-
         MockHttpServletRequestBuilder request = get("/api/musicas?filtro=br");
         mvc.perform(request).andExpect(status().isBadRequest());
         System.out.println(mvc.perform(request).andReturn().getResponse().getStatus());
