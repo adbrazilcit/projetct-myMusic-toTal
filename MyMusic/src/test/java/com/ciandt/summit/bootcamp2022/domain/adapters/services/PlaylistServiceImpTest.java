@@ -7,7 +7,6 @@ import com.ciandt.summit.bootcamp2022.domain.exceptions.NotFoundException;
 import com.ciandt.summit.bootcamp2022.domain.ports.interfaces.MusicaServicePort;
 import com.ciandt.summit.bootcamp2022.domain.ports.interfaces.PlaylistServicePort;
 import com.ciandt.summit.bootcamp2022.domain.ports.repository.PlaylistRepositoryPort;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -38,8 +37,18 @@ public class PlaylistServiceImpTest {
     @MockBean
     private MusicaServicePort musicaServicePort;
 
-    @BeforeEach
-    public void setUp() {
+    public Musica createMusica() {
+        Musica musica = new Musica();
+        musica.setId("25e9839b-0d17-480c-a0ae-36a54fea2c30");
+        musica.setNome("Welcome Home (Sanitarium)");
+
+        Artista artista = new Artista();
+        artista.setId("bf870f08-4fd3-4b00-98a7-3997996cd306");
+        artista.setNome("Metallica");
+
+        musica.setArtistaId(artista);
+
+        return musica;
     }
 
     @Test
@@ -65,15 +74,7 @@ public class PlaylistServiceImpTest {
         Playlist playlist = new Playlist();
         playlist.setId("12");
 
-        Musica musica = new Musica();
-        musica.setId("25e9839b-0d17-480c-a0ae-36a54fea2c30");
-
-        Artista artista = new Artista();
-        artista.setId("bf870f08-4fd3-4b00-98a7-3997996cd306");
-        artista.setNome("Metallica");
-
-        musica.setNome("Welcome Home (Sanitarium)");
-        musica.setArtistaId(artista);
+        Musica musica = createMusica();
 
         when(musicaServicePort.findMusicById(musica.getId())).thenReturn(musica.toMusicaDTO());
 
@@ -84,6 +85,7 @@ public class PlaylistServiceImpTest {
 
 
     @Test
+    @DisplayName("Deve retornar NotFoundException quando musica estiver vazia")
     void shouldThrowNotFoundIfPlaylistIsEmpty() {
         Playlist playlist = new Playlist();
         playlist.setId(" ");
@@ -96,15 +98,7 @@ public class PlaylistServiceImpTest {
     @Test
     @DisplayName("Deve adicionar uma musica na playlist")
     void shouldAddMusicinPlaylist() {
-        Musica musica = new Musica();
-        musica.setId("25e9839b-0d17-480c-a0ae-36a54fea2c30");
-
-        Artista artista = new Artista();
-        artista.setId("bf870f08-4fd3-4b00-98a7-3997996cd306");
-        artista.setNome("Metallica");
-
-        musica.setNome("Welcome Home (Sanitarium)");
-        musica.setArtistaId(artista);
+        Musica musica = createMusica();
 
         Playlist playlist = new Playlist();
         playlist.setId("a39926f4-6acb-4497-884f-d4e5296ef652");

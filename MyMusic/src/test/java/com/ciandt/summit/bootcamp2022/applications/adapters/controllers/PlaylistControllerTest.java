@@ -46,9 +46,7 @@ public class PlaylistControllerTest {
     @MockBean
     private PlaylistServicePort playlistServicePort;
 
-    @Test
-    @DisplayName("Deve retornar adicionar uma playlist")
-    void shouldAddMusicToPlaylist() throws Exception {
+    public Musica createMusica(){
         Musica musica = new Musica();
         musica.setId("12659604-a4a1-4c4c-8a5f-29fff1ad2ac5");
         musica.setNome("24K Magic");
@@ -58,6 +56,14 @@ public class PlaylistControllerTest {
         artista.setNome("Bruno Mars");
 
         musica.setArtistaId(artista);
+
+        return musica;
+    }
+
+    @Test
+    @DisplayName("Deve retornar adicionar uma playlist")
+    void shouldAddMusicToPlaylist() throws Exception {
+        Musica musica = createMusica();
 
         Data<MusicaDTO> data = new Data<>();
 
@@ -85,15 +91,8 @@ public class PlaylistControllerTest {
     @Test
     @DisplayName("Deve retornar bad request ao adicionar uma musica a uma playlist inexistente")
     void shouldReturnBadRequestWhenPlaylistNoExists() throws Exception {
-        Musica musica = new Musica();
-        musica.setId("12659604-a4a1-4c4c-8a5f-29fff1ad2ac5");
-        musica.setNome("24K Magic");
 
-        Artista artista = new Artista();
-        artista.setId("88ac7b00-9489-49ae-a5b1-79d3ba7fc2e6");
-        artista.setNome("Bruno Mars");
-
-        musica.setArtistaId(artista);
+        Musica musica = createMusica();
 
         Data<MusicaDTO> data = new Data<>();
 
