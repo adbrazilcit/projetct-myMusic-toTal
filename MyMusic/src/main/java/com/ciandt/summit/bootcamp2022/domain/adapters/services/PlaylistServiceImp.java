@@ -54,7 +54,7 @@ public class PlaylistServiceImp implements PlaylistServicePort {
     }
 
     @Override
-    public void removeMusicaDaPlaylist(String playlistId, String musicaId) {
+    public void removeMusicFromPlaylist(String playlistId, String musicaId) {
         Musica musica = musicaServicePort.findMusicById(musicaId).toMusic();
         Playlist playlist = playlistRepositoryPort.findById(playlistId);
 

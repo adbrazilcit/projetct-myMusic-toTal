@@ -48,7 +48,7 @@ public class PlaylistServiceTest {
                 playlistMock
         );
 
-        this.servicePlaylist.removeMusicaDaPlaylist("654bbc71-3a9c-4434-a95d-4208f713e586","4aa583c9-40ee-4dea-927d-006637a1efcf");
+        this.servicePlaylist.removeMusicFromPlaylist("654bbc71-3a9c-4434-a95d-4208f713e586","4aa583c9-40ee-4dea-927d-006637a1efcf");
 
         Mockito.verify(repositoryPlaylist,Mockito.times(1)).delete("654bbc71-3a9c-4434-a95d-4208f713e586","4aa583c9-40ee-4dea-927d-006637a1efcf");
     }
@@ -66,7 +66,7 @@ public class PlaylistServiceTest {
 
 
         try {
-            this.servicePlaylist.removeMusicaDaPlaylist("654bbc71-3a9c-4434-a95d-4208f713e586", "4aa583c9-40ee-4dea-927d-006637a1efcf");
+            this.servicePlaylist.removeMusicFromPlaylist("654bbc71-3a9c-4434-a95d-4208f713e586", "4aa583c9-40ee-4dea-927d-006637a1efcf");
         }catch (Throwable e){
             assertEquals("Playlist não encontrada!", e.getMessage());
             assertEquals(NotFoundException.class, e.getClass());
