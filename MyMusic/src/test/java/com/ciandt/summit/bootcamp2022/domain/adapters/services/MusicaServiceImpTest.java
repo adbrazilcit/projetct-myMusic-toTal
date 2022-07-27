@@ -137,7 +137,6 @@ public class MusicaServiceImpTest {
                 new ArrayList<Musica>()
         );
 
-
         try {
             //execução
             this.service.findMusicByFilter(filtroMusica);
@@ -146,8 +145,6 @@ public class MusicaServiceImpTest {
             assertEquals("As informações não foram encontradas", e.getMessage());
             assertEquals(NotFoundException.class, e.getClass());
         }
-
-
     }
 
 
@@ -168,8 +165,6 @@ public class MusicaServiceImpTest {
             assertEquals("As informações não foram encontradas", e.getMessage());
             assertEquals(NotFoundException.class, e.getClass());
         }
-
-
     }
 
 
@@ -191,7 +186,5 @@ public class MusicaServiceImpTest {
             assertEquals("As informações não foram encontradas", e.getMessage());
             assertEquals(NotFoundException.class, e.getClass());
         }
-
-
     }
 }
