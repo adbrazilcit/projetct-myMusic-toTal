@@ -46,5 +46,6 @@ public class PlaylistEntity {
     }
     public void removeMusicasNaPlaylist(MusicaEntity musica) {
         this.musicas.remove(musica);
+
     }
 }

@@ -24,7 +24,6 @@ public class MusicaServiceImp implements MusicaServicePort {
     private GenericCache<String, List<MusicaDTO>> cache;
 
 
-
     @Override
     public List<MusicaDTO> findMusicByFilter(String filtro) {
         List<Musica> musicas = this.musicaRepositoryPort.findByFilter(filtro);

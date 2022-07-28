@@ -10,6 +10,7 @@ import com.ciandt.summit.bootcamp2022.domain.ports.repository.PlaylistRepository
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -19,7 +20,9 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import java.util.ArrayList;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.BDDMockito.willDoNothing;
 import static org.mockito.Mockito.when;
 
@@ -83,7 +86,6 @@ public class PlaylistServiceImpTest {
         assertThat(exception.getMessage()).isEqualTo("Playlist não encontrada!");
     }
 
-
     @Test
     @DisplayName("Deve retornar NotFoundException quando musica estiver vazia")
     void shouldThrowNotFoundIfPlaylistIsEmpty() {
@@ -123,5 +125,40 @@ public class PlaylistServiceImpTest {
         this.service.findPlaylistById(playlist.getId());
 
         assertThat(playlist.getId()).isNotEmpty();
+    }
+
+
+    @Test
+    @DisplayName("Deleta a música da playlist")
+    public  void  deleteMusicWhenMusicAndPlaylistIsValid(){
+        Playlist playlistMock = new Playlist();
+
+        Mockito.when(repository.findById("654bbc71-3a9c-4434-a95d-4208f713e586")).thenReturn(
+                playlistMock
+        );
+
+        this.service.removeMusicFromPlaylist("654bbc71-3a9c-4434-a95d-4208f713e586","4aa583c9-40ee-4dea-927d-006637a1efcf");
+
+        Mockito.verify(repository,Mockito.times(1)).delete("654bbc71-3a9c-4434-a95d-4208f713e586","4aa583c9-40ee-4dea-927d-006637a1efcf");
+    }
+
+
+    @Test
+    @DisplayName("Ao tentar deletar deve lançar a  exceção porque a playlist é inválida")
+    public  void  ThrowExceptionWhenPlaylistIsInvalid(){
+
+        Playlist playlistMock = null;
+
+        Mockito.when(repository.findById("654bbc71-3a9c-4434-a95d-4208f713e586")).thenReturn(
+                playlistMock
+        );
+
+        try {
+            this.service.removeMusicFromPlaylist("654bbc71-3a9c-4434-a95d-4208f713e586", "4aa583c9-40ee-4dea-927d-006637a1efcf");
+        }catch (Throwable e){
+            assertEquals("Playlist não encontrada!", e.getMessage());
+            assertEquals(NotFoundException.class, e.getClass());
+        }
+
     }
 }

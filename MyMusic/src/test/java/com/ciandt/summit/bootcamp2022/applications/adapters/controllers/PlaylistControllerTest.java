@@ -26,6 +26,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import java.util.List;
 
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.BDDMockito.will;
 import static org.mockito.BDDMockito.willThrow;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -141,6 +142,8 @@ public class PlaylistControllerTest {
                 .given(musicaServicePort.findMusicById("c79afa2c-f9be-47b7-b1e1-1057bac049e8"))
                 .willReturn(new MusicaDTO("c79afa2c-f9be-47b7-b1e1-1057bac049e8", "Aye Davanita", new Artista("7ada007e-c740-40ea-8229-c45e4953a8b3", "Pearl Jam")));
 
+        willThrow(new BadRequestException("Playlist não encontrada!")).given(this.playlistServicePort).removeMusicFromPlaylist(any(String.class), any(String.class));
+
         MockHttpServletRequestBuilder request = delete("/api/playlists/15151515151515115/musicas/c79afa2c-f9be-47b7-b1e1-1057bac049e8");
         mvc.perform(request).andExpect(status().isBadRequest());
     }
@@ -148,12 +151,16 @@ public class PlaylistControllerTest {
     @Test
     @DisplayName("Deve retornar bad request ao remover uma musica que não existe")
     void ShouldReturnA400IfMusicNoExists() throws Exception {
+
         BDDMockito
                 .given(playlistServicePort.findPlaylistById("a39926f4-6acb-4497-884f-d4e5296ef652"))
                 .willReturn(new Playlist("a39926f4-6acb-4497-884f-d4e5296ef652"));
+
         BDDMockito
                 .given(musicaServicePort.findMusicById("c84848484848"))
                 .willThrow(new BadRequestException("Música não existe no banco de dados"));
+
+        willThrow(new BadRequestException("Música não encontrada")).given(this.playlistServicePort).removeMusicFromPlaylist(any(String.class), any(String.class));
 
         MockHttpServletRequestBuilder request = delete("/api/playlists/a39926f4-6acb-4497-884f-d4e5296ef652/musicas/c84848484848");
         mvc.perform(request).andExpect(status().isBadRequest());

@@ -1,7 +1,6 @@
 package com.ciandt.summit.bootcamp2022.config;
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -16,9 +15,22 @@ public class ConfiguracaoToken extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-       http.csrf().disable().addFilter(new TokenFiltro(authenticationManager())).
-               sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+
+        http.csrf().disable().addFilter(new TokenFiltro(authenticationManager())).
+                sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+
     }
+
+    @Override
+    public void configure(WebSecurity web) {
+        web.ignoring().antMatchers("/v2/api-docs",
+                "/configuration/ui",
+                "/swagger-resources/**",
+                "/configuration/security",
+                "/swagger-ui.html",
+                "/webjars/**");
+    }
+
 
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
@@ -27,7 +39,4 @@ public class ConfiguracaoToken extends WebSecurityConfigurerAdapter {
         source.registerCorsConfiguration("/**", corsConfiguration);
         return source;
     }
-
-
-
 }
