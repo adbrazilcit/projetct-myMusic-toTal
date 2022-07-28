@@ -2,6 +2,7 @@ package com.ciandt.summit.bootcamp2022.domain.adapters.services;
 
 import com.ciandt.summit.bootcamp2022.domain.Musica;
 import com.ciandt.summit.bootcamp2022.domain.Playlist;
+import com.ciandt.summit.bootcamp2022.domain.exceptions.BadRequestException;
 import com.ciandt.summit.bootcamp2022.domain.exceptions.NotFoundException;
 import com.ciandt.summit.bootcamp2022.domain.ports.interfaces.MusicaServicePort;
 import com.ciandt.summit.bootcamp2022.domain.ports.interfaces.PlaylistServicePort;
@@ -42,6 +43,7 @@ public class PlaylistServiceImp implements PlaylistServicePort {
     @Override
     public void addMusicInPlaylist(String playlistId, String musicaId) {
         Playlist playlist = playlistRepositoryPort.findById(playlistId);
+        Musica musica = musicaServicePort.findMusicById(musicaId).toMusic();
 
         if (playlist == null) {
             throw new NotFoundException("Playlist não encontrada!");
@@ -52,16 +54,14 @@ public class PlaylistServiceImp implements PlaylistServicePort {
 
     @Override
     public void removeMusicFromPlaylist(String playlistId, String musicaId) {
-        System.out.println("Service");
-
         Musica musica = musicaServicePort.findMusicById(musicaId).toMusic();
         Playlist playlist = playlistRepositoryPort.findById(playlistId);
 
 
         if (playlist == null) {
-            throw new NotFoundException("Playlist não encontrada!");
+            throw new BadRequestException("Playlist não encontrada!");
         } else if (musica == null) {
-            throw new NotFoundException("Música não encontrada!");
+            throw new BadRequestException("Música não encontrada!");
         }
 
         playlistRepositoryPort.delete(playlistId, musicaId);
