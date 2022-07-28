@@ -63,7 +63,6 @@ public class MusicaServiceImp implements MusicaServicePort {
     }
 
     public List<MusicaDTO> fromRepository(String filtro) {
-        System.out.println("Dentro do FromRepositpry");
         Comparator<MusicaDTO> comparatorNomeArtista = (p1, p2) -> p1.getArtista().getNome().compareTo(p2.getArtista().getNome());
         Comparator<MusicaDTO> comparatorNomeMusica = (a1, a2) -> a1.getNome().compareTo(a2.getNome());
 
