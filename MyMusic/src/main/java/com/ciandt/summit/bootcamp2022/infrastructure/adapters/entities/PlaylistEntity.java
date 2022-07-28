@@ -22,7 +22,6 @@ public class PlaylistEntity {
             joinColumns = {@JoinColumn(name = "PlaylistId")},
             inverseJoinColumns = {@JoinColumn(name = "MusicaId")}
     )
-
     private List<MusicaEntity> musicas = new ArrayList<>();
 
 
