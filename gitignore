@@ -1,0 +1,5 @@
+./MyMusic/.idea/
+./MyMusic/target/
+./TokenProvider/logs/**
+./TokenProvider/.idea/
+./.idea
