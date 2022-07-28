@@ -31,13 +31,6 @@ public class MusicaServiceImp implements MusicaServicePort {
         if (musicas.isEmpty())
             throw new NotFoundException("As informações não foram encontradas");
 
-//        Comparator<MusicaDTO> comparatorNomeArtista = (p1, p2) -> p1.getArtista().getNome().compareTo(p2.getArtista().getNome());
-//        Comparator<MusicaDTO> comparatorNomeMusica = (a1, a2) -> a1.getNome().compareTo(a2.getNome());
-//
-//        return musicas.stream().map(
-//                musica -> new MusicaDTO(musica.getId(), musica.getNome(), musica.getArtistaId()))
-//                .sorted(comparatorNomeArtista.thenComparing(comparatorNomeMusica)).collect(Collectors.toList());
-
         return this.cache.get(filtro).orElseGet(() -> this.fromRepository(filtro));
     }
 
