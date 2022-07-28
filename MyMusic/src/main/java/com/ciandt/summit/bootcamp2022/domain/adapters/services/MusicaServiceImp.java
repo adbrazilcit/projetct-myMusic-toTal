@@ -18,7 +18,6 @@ public class MusicaServiceImp implements MusicaServicePort {
     @Autowired
     private MusicaRepositoryPort musicaRepositoryPort;
 
-
     @Override
     public List<MusicaDTO> findMusicByFilter(String filtro) {
         List<Musica> musicas = this.musicaRepositoryPort.findByFilter(filtro);

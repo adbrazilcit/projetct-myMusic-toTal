@@ -1861,3 +1861,642 @@ java.lang.IllegalArgumentException: Password cannot be set empty
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:829)
+2022-07-28 13:59:21,499 INFO org.springframework.boot.StartupInfoLogger [main] Starting TokenProviderApplication using Java 11.0.15 on lnb035828spo with PID 113234 (/home/andressas/Documentos/projetct-myMusic-toTal/TokenProvider/target/classes started by CIANDT\andressas in /home/andressas/Documentos/projetct-myMusic-toTal/TokenProvider)
+2022-07-28 13:59:21,501 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2022-07-28 13:59:22,499 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8081 (http)
+2022-07-28 13:59:22,510 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2022-07-28 13:59:22,511 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2022-07-28 13:59:22,511 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-07-28 13:59:22,579 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2022-07-28 13:59:22,579 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1029 ms
+2022-07-28 13:59:22,988 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [main] Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-07-28 13:59:23,001 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
+2022-07-28 13:59:23,011 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8081 (http) with context path ''
+2022-07-28 13:59:23,020 INFO org.springframework.boot.StartupInfoLogger [main] Started TokenProviderApplication in 1.993 seconds (JVM running for 3.066)
+2022-07-28 13:59:26,491 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-28 13:59:26,492 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-2] Initializing Servlet 'dispatcherServlet'
+2022-07-28 13:59:26,495 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-2] Completed initialization in 3 ms
+2022-07-28 13:59:26,562 INFO com.ciandt.token.provider.controllers.TokenController [http-nio-8081-exec-2] Recebido requisição para criação de token para chave: andressa
+2022-07-28 13:59:26,615 INFO com.ciandt.token.provider.controllers.TokenController [http-nio-8081-exec-2] Token gerado com sucesso
+2022-07-28 14:03:22,822 INFO com.ciandt.token.provider.controllers.TokenController [http-nio-8081-exec-5] Recebido requisição para criação de token para chave: andressa
+2022-07-28 14:03:22,824 INFO com.ciandt.token.provider.controllers.TokenController [http-nio-8081-exec-5] Token gerado com sucesso
+2022-07-28 14:07:04,662 INFO com.ciandt.token.provider.controllers.TokenController [http-nio-8081-exec-8] Recebido requisição para criação de token para chave: andressa
+2022-07-28 14:07:04,664 INFO com.ciandt.token.provider.controllers.TokenController [http-nio-8081-exec-8] Token gerado com sucesso
+2022-07-28 14:35:57,173 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-10] Recebido requisição para geração de token: andressa
+2022-07-28 14:35:57,177 ERROR com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-10] Requisição inválida: Token expirado
+2022-07-28 14:35:57,223 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-1] Recebido requisição para geração de token: andressa
+2022-07-28 14:35:57,224 ERROR com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-1] Requisição inválida: Token expirado
+2022-07-28 14:36:06,717 INFO com.ciandt.token.provider.controllers.TokenController [http-nio-8081-exec-3] Recebido requisição para criação de token para chave: andressa
+2022-07-28 14:36:06,718 INFO com.ciandt.token.provider.controllers.TokenController [http-nio-8081-exec-3] Token gerado com sucesso
+2022-07-28 14:36:20,324 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-4] Recebido requisição para geração de token: andressa
+2022-07-28 14:36:20,327 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-4] Token validado com sucesso
+2022-07-28 14:36:20,339 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-5] Recebido requisição para geração de token: andressa
+2022-07-28 14:36:20,341 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-5] Token validado com sucesso
+2022-07-28 14:40:07,986 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-8] Recebido requisição para geração de token: null
+2022-07-28 14:40:07,989 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-8] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalArgumentException: Password cannot be set empty] with root cause
+java.lang.IllegalArgumentException: Password cannot be set empty
+	at org.jasypt.commons.CommonUtils.validateNotEmpty(CommonUtils.java:143)
+	at org.jasypt.encryption.pbe.StandardPBEByteEncryptor.setPassword(StandardPBEByteEncryptor.java:322)
+	at org.jasypt.encryption.pbe.StandardPBEStringEncryptor.setPassword(StandardPBEStringEncryptor.java:299)
+	at com.ciandt.token.provider.services.EncryptServices.createEncryptor(EncryptServices.java:30)
+	at com.ciandt.token.provider.services.EncryptServices.decrypt(EncryptServices.java:21)
+	at com.ciandt.token.provider.core.usecases.CreateAuthorizerUseCase.execute(CreateAuthorizerUseCase.java:18)
+	at com.ciandt.token.provider.controllers.TokenAuthorizerController.createTokenAuthorizer(TokenAuthorizerController.java:33)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1732)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2022-07-28 14:40:08,015 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-9] Recebido requisição para geração de token: null
+2022-07-28 14:40:08,016 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-9] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalArgumentException: Password cannot be set empty] with root cause
+java.lang.IllegalArgumentException: Password cannot be set empty
+	at org.jasypt.commons.CommonUtils.validateNotEmpty(CommonUtils.java:143)
+	at org.jasypt.encryption.pbe.StandardPBEByteEncryptor.setPassword(StandardPBEByteEncryptor.java:322)
+	at org.jasypt.encryption.pbe.StandardPBEStringEncryptor.setPassword(StandardPBEStringEncryptor.java:299)
+	at com.ciandt.token.provider.services.EncryptServices.createEncryptor(EncryptServices.java:30)
+	at com.ciandt.token.provider.services.EncryptServices.decrypt(EncryptServices.java:21)
+	at com.ciandt.token.provider.core.usecases.CreateAuthorizerUseCase.execute(CreateAuthorizerUseCase.java:18)
+	at com.ciandt.token.provider.controllers.TokenAuthorizerController.createTokenAuthorizer(TokenAuthorizerController.java:33)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1732)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2022-07-28 14:40:09,687 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-10] Recebido requisição para geração de token: null
+2022-07-28 14:40:09,688 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-10] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalArgumentException: Password cannot be set empty] with root cause
+java.lang.IllegalArgumentException: Password cannot be set empty
+	at org.jasypt.commons.CommonUtils.validateNotEmpty(CommonUtils.java:143)
+	at org.jasypt.encryption.pbe.StandardPBEByteEncryptor.setPassword(StandardPBEByteEncryptor.java:322)
+	at org.jasypt.encryption.pbe.StandardPBEStringEncryptor.setPassword(StandardPBEStringEncryptor.java:299)
+	at com.ciandt.token.provider.services.EncryptServices.createEncryptor(EncryptServices.java:30)
+	at com.ciandt.token.provider.services.EncryptServices.decrypt(EncryptServices.java:21)
+	at com.ciandt.token.provider.core.usecases.CreateAuthorizerUseCase.execute(CreateAuthorizerUseCase.java:18)
+	at com.ciandt.token.provider.controllers.TokenAuthorizerController.createTokenAuthorizer(TokenAuthorizerController.java:33)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1732)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2022-07-28 14:40:09,694 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-1] Recebido requisição para geração de token: null
+2022-07-28 14:40:09,696 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-1] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalArgumentException: Password cannot be set empty] with root cause
+java.lang.IllegalArgumentException: Password cannot be set empty
+	at org.jasypt.commons.CommonUtils.validateNotEmpty(CommonUtils.java:143)
+	at org.jasypt.encryption.pbe.StandardPBEByteEncryptor.setPassword(StandardPBEByteEncryptor.java:322)
+	at org.jasypt.encryption.pbe.StandardPBEStringEncryptor.setPassword(StandardPBEStringEncryptor.java:299)
+	at com.ciandt.token.provider.services.EncryptServices.createEncryptor(EncryptServices.java:30)
+	at com.ciandt.token.provider.services.EncryptServices.decrypt(EncryptServices.java:21)
+	at com.ciandt.token.provider.core.usecases.CreateAuthorizerUseCase.execute(CreateAuthorizerUseCase.java:18)
+	at com.ciandt.token.provider.controllers.TokenAuthorizerController.createTokenAuthorizer(TokenAuthorizerController.java:33)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1732)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2022-07-28 14:40:14,163 INFO com.ciandt.token.provider.controllers.TokenController [http-nio-8081-exec-3] Recebido requisição para criação de token para chave: andressa
+2022-07-28 14:40:14,164 INFO com.ciandt.token.provider.controllers.TokenController [http-nio-8081-exec-3] Token gerado com sucesso
+2022-07-28 14:40:32,541 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-4] Recebido requisição para geração de token: andressa
+2022-07-28 14:40:32,542 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-4] Token validado com sucesso
+2022-07-28 14:40:32,551 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-5] Recebido requisição para geração de token: andressa
+2022-07-28 14:40:32,552 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-5] Token validado com sucesso
+2022-07-28 14:40:38,085 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-6] Recebido requisição para geração de token: andressa
+2022-07-28 14:40:38,086 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-6] Token validado com sucesso
+2022-07-28 14:40:38,091 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-7] Recebido requisição para geração de token: andressa
+2022-07-28 14:40:38,092 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-7] Token validado com sucesso
+2022-07-28 14:40:45,190 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-8] Recebido requisição para geração de token: null
+2022-07-28 14:40:45,191 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-8] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalArgumentException: Password cannot be set empty] with root cause
+java.lang.IllegalArgumentException: Password cannot be set empty
+	at org.jasypt.commons.CommonUtils.validateNotEmpty(CommonUtils.java:143)
+	at org.jasypt.encryption.pbe.StandardPBEByteEncryptor.setPassword(StandardPBEByteEncryptor.java:322)
+	at org.jasypt.encryption.pbe.StandardPBEStringEncryptor.setPassword(StandardPBEStringEncryptor.java:299)
+	at com.ciandt.token.provider.services.EncryptServices.createEncryptor(EncryptServices.java:30)
+	at com.ciandt.token.provider.services.EncryptServices.decrypt(EncryptServices.java:21)
+	at com.ciandt.token.provider.core.usecases.CreateAuthorizerUseCase.execute(CreateAuthorizerUseCase.java:18)
+	at com.ciandt.token.provider.controllers.TokenAuthorizerController.createTokenAuthorizer(TokenAuthorizerController.java:33)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1732)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2022-07-28 14:40:45,197 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-9] Recebido requisição para geração de token: null
+2022-07-28 14:40:45,198 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-9] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalArgumentException: Password cannot be set empty] with root cause
+java.lang.IllegalArgumentException: Password cannot be set empty
+	at org.jasypt.commons.CommonUtils.validateNotEmpty(CommonUtils.java:143)
+	at org.jasypt.encryption.pbe.StandardPBEByteEncryptor.setPassword(StandardPBEByteEncryptor.java:322)
+	at org.jasypt.encryption.pbe.StandardPBEStringEncryptor.setPassword(StandardPBEStringEncryptor.java:299)
+	at com.ciandt.token.provider.services.EncryptServices.createEncryptor(EncryptServices.java:30)
+	at com.ciandt.token.provider.services.EncryptServices.decrypt(EncryptServices.java:21)
+	at com.ciandt.token.provider.core.usecases.CreateAuthorizerUseCase.execute(CreateAuthorizerUseCase.java:18)
+	at com.ciandt.token.provider.controllers.TokenAuthorizerController.createTokenAuthorizer(TokenAuthorizerController.java:33)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1732)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2022-07-28 14:41:01,924 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-10] Recebido requisição para geração de token: andressa
+2022-07-28 14:41:01,925 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-10] Token validado com sucesso
+2022-07-28 14:41:01,933 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-1] Recebido requisição para geração de token: andressa
+2022-07-28 14:41:01,934 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-1] Token validado com sucesso
+2022-07-28 14:41:16,230 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-3] Recebido requisição para geração de token: andressa
+2022-07-28 14:41:16,231 ERROR com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-3] Requisição inválida: Token expirado
+2022-07-28 14:41:16,235 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-4] Recebido requisição para geração de token: andressa
+2022-07-28 14:41:16,236 ERROR com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-4] Requisição inválida: Token expirado
+2022-07-28 14:41:20,737 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-5] Recebido requisição para geração de token: andressa
+2022-07-28 14:41:20,738 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-5] Token validado com sucesso
+2022-07-28 14:41:20,743 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-6] Recebido requisição para geração de token: andressa
+2022-07-28 14:41:20,745 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-6] Token validado com sucesso
+2022-07-28 14:42:20,659 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-10] Recebido requisição para geração de token: andressa
+2022-07-28 14:42:20,661 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-10] Token validado com sucesso
+2022-07-28 14:42:20,664 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-1] Recebido requisição para geração de token: andressa
+2022-07-28 14:42:20,665 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-1] Token validado com sucesso
+2022-07-28 14:42:31,846 INFO com.ciandt.token.provider.controllers.TokenController [http-nio-8081-exec-4] Recebido requisição para criação de token para chave: andressa
+2022-07-28 14:42:31,847 INFO com.ciandt.token.provider.controllers.TokenController [http-nio-8081-exec-4] Token gerado com sucesso
+2022-07-28 14:42:40,467 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-5] Recebido requisição para geração de token: andressa
+2022-07-28 14:42:40,468 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-5] Token validado com sucesso
+2022-07-28 14:42:40,477 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-6] Recebido requisição para geração de token: andressa
+2022-07-28 14:42:40,479 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-6] Token validado com sucesso
+2022-07-28 14:42:58,328 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-7] Recebido requisição para geração de token: andressa
+2022-07-28 14:42:58,330 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-7] Token validado com sucesso
+2022-07-28 14:42:58,336 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-8] Recebido requisição para geração de token: andressa
+2022-07-28 14:42:58,337 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-8] Token validado com sucesso
+2022-07-28 14:43:12,974 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-9] Recebido requisição para geração de token: andressa
+2022-07-28 14:43:12,976 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-9] Token validado com sucesso
+2022-07-28 14:43:12,982 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-10] Recebido requisição para geração de token: andressa
+2022-07-28 14:43:12,983 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-10] Token validado com sucesso
+2022-07-28 14:43:35,798 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-3] Recebido requisição para geração de token: andressa
+2022-07-28 14:43:35,799 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-3] Token validado com sucesso
+2022-07-28 14:43:35,802 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-4] Recebido requisição para geração de token: andressa
+2022-07-28 14:43:35,803 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-4] Token validado com sucesso
+2022-07-28 14:43:46,797 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-6] Recebido requisição para geração de token: andressa
+2022-07-28 14:43:46,798 ERROR com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-6] Requisição inválida: Token expirado
+2022-07-28 14:43:46,802 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-7] Recebido requisição para geração de token: andressa
+2022-07-28 14:43:46,803 ERROR com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-7] Requisição inválida: Token expirado
+2022-07-28 14:43:54,539 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-8] Recebido requisição para geração de token: andressa
+2022-07-28 14:43:54,540 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-8] Token validado com sucesso
+2022-07-28 14:43:54,547 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-9] Recebido requisição para geração de token: andressa
+2022-07-28 14:43:54,548 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-9] Token validado com sucesso
+2022-07-28 14:44:01,820 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-1] Recebido requisição para geração de token: andressa
+2022-07-28 14:44:01,821 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-1] Token validado com sucesso
+2022-07-28 14:44:01,826 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-2] Recebido requisição para geração de token: andressa
+2022-07-28 14:44:01,827 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-2] Token validado com sucesso
+2022-07-28 14:44:28,486 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-4] Recebido requisição para geração de token: andressa
+2022-07-28 14:44:28,487 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-4] Token validado com sucesso
+2022-07-28 14:44:28,490 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-5] Recebido requisição para geração de token: andressa
+2022-07-28 14:44:28,491 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-5] Token validado com sucesso
+2022-07-28 14:44:31,112 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-6] Recebido requisição para geração de token: andressa
+2022-07-28 14:44:31,112 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-6] Token validado com sucesso
+2022-07-28 14:44:31,115 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-7] Recebido requisição para geração de token: andressa
+2022-07-28 14:44:31,116 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-7] Token validado com sucesso
+2022-07-28 14:44:36,928 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-9] Recebido requisição para geração de token: andressa
+2022-07-28 14:44:36,928 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-9] Token validado com sucesso
+2022-07-28 14:44:36,932 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-10] Recebido requisição para geração de token: andressa
+2022-07-28 14:44:36,933 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-10] Token validado com sucesso
+2022-07-28 15:42:48,914 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-6] Recebido requisição para geração de token: null
+2022-07-28 15:42:48,915 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-6] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalArgumentException: Password cannot be set empty] with root cause
+java.lang.IllegalArgumentException: Password cannot be set empty
+	at org.jasypt.commons.CommonUtils.validateNotEmpty(CommonUtils.java:143)
+	at org.jasypt.encryption.pbe.StandardPBEByteEncryptor.setPassword(StandardPBEByteEncryptor.java:322)
+	at org.jasypt.encryption.pbe.StandardPBEStringEncryptor.setPassword(StandardPBEStringEncryptor.java:299)
+	at com.ciandt.token.provider.services.EncryptServices.createEncryptor(EncryptServices.java:30)
+	at com.ciandt.token.provider.services.EncryptServices.decrypt(EncryptServices.java:21)
+	at com.ciandt.token.provider.core.usecases.CreateAuthorizerUseCase.execute(CreateAuthorizerUseCase.java:18)
+	at com.ciandt.token.provider.controllers.TokenAuthorizerController.createTokenAuthorizer(TokenAuthorizerController.java:33)
+	at jdk.internal.reflect.GeneratedMethodAccessor42.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1732)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2022-07-28 15:42:48,939 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-7] Recebido requisição para geração de token: null
+2022-07-28 15:42:48,941 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-7] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalArgumentException: Password cannot be set empty] with root cause
+java.lang.IllegalArgumentException: Password cannot be set empty
+	at org.jasypt.commons.CommonUtils.validateNotEmpty(CommonUtils.java:143)
+	at org.jasypt.encryption.pbe.StandardPBEByteEncryptor.setPassword(StandardPBEByteEncryptor.java:322)
+	at org.jasypt.encryption.pbe.StandardPBEStringEncryptor.setPassword(StandardPBEStringEncryptor.java:299)
+	at com.ciandt.token.provider.services.EncryptServices.createEncryptor(EncryptServices.java:30)
+	at com.ciandt.token.provider.services.EncryptServices.decrypt(EncryptServices.java:21)
+	at com.ciandt.token.provider.core.usecases.CreateAuthorizerUseCase.execute(CreateAuthorizerUseCase.java:18)
+	at com.ciandt.token.provider.controllers.TokenAuthorizerController.createTokenAuthorizer(TokenAuthorizerController.java:33)
+	at jdk.internal.reflect.GeneratedMethodAccessor42.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1732)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2022-07-28 15:44:02,379 INFO com.ciandt.token.provider.controllers.TokenController [http-nio-8081-exec-9] Recebido requisição para criação de token para chave: andressa
+2022-07-28 15:44:02,380 INFO com.ciandt.token.provider.controllers.TokenController [http-nio-8081-exec-9] Token gerado com sucesso
+2022-07-28 15:44:11,905 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-10] Recebido requisição para geração de token: andressa
+2022-07-28 15:44:11,905 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-10] Token validado com sucesso
+2022-07-28 15:44:11,911 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-3] Recebido requisição para geração de token: andressa
+2022-07-28 15:44:11,912 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-3] Token validado com sucesso
+2022-07-28 16:36:03,377 INFO com.ciandt.token.provider.controllers.TokenController [http-nio-8081-exec-2] Recebido requisição para criação de token para chave: andressa
+2022-07-28 16:36:03,378 INFO com.ciandt.token.provider.controllers.TokenController [http-nio-8081-exec-2] Token gerado com sucesso
+2022-07-28 16:36:44,859 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-6] Recebido requisição para geração de token: andressa
+2022-07-28 16:36:44,860 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-6] Token validado com sucesso
+2022-07-28 16:36:44,879 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-7] Recebido requisição para geração de token: andressa
+2022-07-28 16:36:44,880 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-7] Token validado com sucesso
+2022-07-28 16:37:14,981 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-9] Recebido requisição para geração de token: andressa
+2022-07-28 16:37:14,982 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-9] Token validado com sucesso
+2022-07-28 16:37:14,985 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-10] Recebido requisição para geração de token: andressa
+2022-07-28 16:37:14,986 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-10] Token validado com sucesso
+2022-07-28 16:37:41,752 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-5] Recebido requisição para geração de token: andressa
+2022-07-28 16:37:41,753 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-5] Token validado com sucesso
+2022-07-28 16:37:41,757 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-1] Recebido requisição para geração de token: andressa
+2022-07-28 16:37:41,757 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-1] Token validado com sucesso
+2022-07-28 16:41:13,255 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-6] Recebido requisição para geração de token: andressa
+2022-07-28 16:41:13,256 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-6] Token validado com sucesso
+2022-07-28 16:41:13,262 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-7] Recebido requisição para geração de token: andressa
+2022-07-28 16:41:13,263 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-7] Token validado com sucesso
+2022-07-28 16:41:16,679 INFO com.ciandt.token.provider.controllers.TokenController [http-nio-8081-exec-9] Recebido requisição para criação de token para chave: andressa
+2022-07-28 16:41:16,680 INFO com.ciandt.token.provider.controllers.TokenController [http-nio-8081-exec-9] Token gerado com sucesso
+2022-07-28 16:44:03,960 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-5] Recebido requisição para geração de token: andressa
+2022-07-28 16:44:03,961 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-5] Token validado com sucesso
+2022-07-28 16:44:03,977 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-1] Recebido requisição para geração de token: andressa
+2022-07-28 16:44:03,977 INFO com.ciandt.token.provider.controllers.TokenAuthorizerController [http-nio-8081-exec-1] Token validado com sucesso
