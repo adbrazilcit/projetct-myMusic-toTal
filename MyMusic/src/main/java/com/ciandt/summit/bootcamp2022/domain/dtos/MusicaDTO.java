@@ -13,7 +13,6 @@ public class MusicaDTO {
 
     public MusicaDTO() {
     }
-
     public MusicaDTO(String id, String nome, Artista artista) {
         this.id = id;
         this.nome = nome;
@@ -45,9 +44,6 @@ public class MusicaDTO {
     }
 
     public Musica toMusic() {
-        if(this==null){
-            return null;
-        }
         return new Musica(this.id, this.artista, this.nome);
     }
 }
