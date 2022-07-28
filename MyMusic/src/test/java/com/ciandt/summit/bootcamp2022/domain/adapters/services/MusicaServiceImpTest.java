@@ -99,7 +99,7 @@ public class MusicaServiceImpTest {
 
 
     @Test
-    @DisplayName("Deve lançar uma exceção porque a música buscada não foi encontrada")
+    @DisplayName("Deve lançar uma exceção quando a música buscada não for encontrada")
     public void findMusicByFilterNoMatcher() {
 
         String filtroMusica = "filtroNaoExistente";
@@ -118,7 +118,7 @@ public class MusicaServiceImpTest {
 
 
     @Test
-    @DisplayName("Deve trazer todos as músicas presentes no banco")
+    @DisplayName("Deve trazer todas músicas presentes no banco")
     public void findAll() {
 
         List<Musica> musicasLista = new ArrayList<>();
@@ -142,7 +142,7 @@ public class MusicaServiceImpTest {
     }
 
     @Test
-    @DisplayName("Deve lançar uma exceção porque a música buscada não foi encontrada")
+    @DisplayName("Deve lançar uma exceção quando a música buscada não for encontrada")
     public void findAllNoMatcher() {
 
         Mockito.when(repository.findAll()).thenReturn(

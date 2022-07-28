@@ -62,7 +62,7 @@ public class PlaylistControllerTest {
     }
 
     @Test
-    @DisplayName("Deve retornar adicionar uma playlist")
+    @DisplayName("Deve adicionar uma música na playlist")
     void shouldAddMusicToPlaylist() throws Exception {
         Musica musica = createMusica();
 

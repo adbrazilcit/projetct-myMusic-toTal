@@ -35,7 +35,7 @@ public class MusicaControllerTest {
     private MusicaServicePort musicaServicePort;
 
     @Test
-    @DisplayName("Deve retornar No Conter quando não encontrar pelo filtro")
+    @DisplayName("Deve retornar status No Content quando não encontrar pelo filtro")
     void returnNoContentWhenFilterNotFound() throws Exception {
         MockHttpServletRequestBuilder request = get("/api/musicas?filtro=andreus");
         BDDMockito.given(musicaServicePort.findMusicByFilter("andreus")).willThrow(new NotFoundException("As informações não foram encontradas"));
@@ -43,7 +43,7 @@ public class MusicaControllerTest {
     }
 
     @Test
-    @DisplayName("Deve retornar OK quando encontrar pelo filtro")
+    @DisplayName("Deve retornar status OK quando encontrar pelo filtro")
     void retornaArrayQuandoEncontrarFiltro() throws Exception {
         MockHttpServletRequestBuilder request = get("/api/musicas?filtro=bruno");
         BDDMockito.given(musicaServicePort.findMusicByFilter("bruno")).willReturn(new ArrayList<MusicaDTO>());
@@ -51,7 +51,7 @@ public class MusicaControllerTest {
     }
 
     @Test
-    @DisplayName("Deve retornar OK quando encontrar pelo filtro")
+    @DisplayName("Deve retornar status OK quando encontrar pelo filtro")
     void retornaArrayPreechidoAllQuandoPassadoSemfiltro() throws Exception {
         MockHttpServletRequestBuilder request = get("/api/musicas");
         BDDMockito.given(musicaServicePort.findAll()).willReturn(new ArrayList<MusicaDTO>());
