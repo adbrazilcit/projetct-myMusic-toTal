@@ -62,6 +62,8 @@ public class PlaylistRepository implements PlaylistRepositoryPort {
     @Override
     public void delete(String playlistId, String musicaId) {
 
+        System.out.println("Repository");
+
         Optional<PlaylistEntity> playlist = this.springPlaylistRepository.findById(playlistId);
 
         LOGGER.info("Playlist encontrada " + playlistId);

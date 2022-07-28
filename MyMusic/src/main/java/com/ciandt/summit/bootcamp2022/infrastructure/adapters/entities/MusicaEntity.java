@@ -4,6 +4,7 @@ import com.ciandt.summit.bootcamp2022.domain.Artista;
 import com.ciandt.summit.bootcamp2022.domain.Musica;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 @Table(name = "Musicas")
@@ -33,6 +34,19 @@ public class MusicaEntity {
         this.id = musica.getId();
         this.artistas = new ArtistaEntity(musica.getArtistaId());
         this.nome = musica.getNome();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MusicaEntity that = (MusicaEntity) o;
+        return id.equals(that.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 
     public Musica toMusica() {

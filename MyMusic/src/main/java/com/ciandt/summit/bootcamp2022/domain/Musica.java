@@ -2,6 +2,8 @@ package com.ciandt.summit.bootcamp2022.domain;
 
 import com.ciandt.summit.bootcamp2022.domain.dtos.MusicaDTO;
 
+import java.util.Objects;
+
 public class Musica {
 
     private String id;
@@ -56,6 +58,19 @@ public class Musica {
                 ", artistaId=" + artistaId +
                 ", nome='" + nome + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Musica musica = (Musica) o;
+        return id.equals(musica.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 
     public MusicaDTO toMusicaDTO() {
