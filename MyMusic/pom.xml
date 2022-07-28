@@ -126,6 +126,12 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <excludes>
+                        <exclude>com.ciandt.summit.bootcamp2022.config</exclude>
+                        <exclude>com.ciandt.summit.bootcamp2022.infrastructure.adapters.entities</exclude>
+                    </excludes>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
