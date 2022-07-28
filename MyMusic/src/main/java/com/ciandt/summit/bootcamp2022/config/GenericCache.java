@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 @Component
 public class GenericCache<K, V> implements IGenericCache<K, V> {
 
-    public static final Long DEFAULT_CACHE_TIMEOUT = 20L;
+    public static final Long DEFAULT_CACHE_TIMEOUT = 10L;
 
     protected Map<K, CacheValue<V>> cacheMap;
     protected Long cacheTimeout;
@@ -45,7 +45,7 @@ public class GenericCache<K, V> implements IGenericCache<K, V> {
     }
 
     protected boolean isExpired(K key) {
-        LocalDateTime expirationDateTime = this.cacheMap.get(key).getCreatedAt().plus(this.cacheTimeout, ChronoUnit.SECONDS);
+        LocalDateTime expirationDateTime = this.cacheMap.get(key).getCreatedAt().plus(this.cacheTimeout, ChronoUnit.MINUTES);
         return LocalDateTime.now().isAfter(expirationDateTime);
     }
 
