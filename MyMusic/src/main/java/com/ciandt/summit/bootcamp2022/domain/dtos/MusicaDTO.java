@@ -13,7 +13,6 @@ public class MusicaDTO {
 
     public MusicaDTO() {
     }
-
     public MusicaDTO(String id, String nome, Artista artista) {
         this.id = id;
         this.nome = nome;
