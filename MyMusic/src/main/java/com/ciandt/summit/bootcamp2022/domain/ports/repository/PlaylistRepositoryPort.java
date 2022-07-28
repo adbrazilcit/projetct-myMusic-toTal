@@ -11,4 +11,6 @@ public interface PlaylistRepositoryPort {
     List<Playlist> findAll();
 
     void save(String playlistId, String musicaId);
+
+    void delete(String playlistId, String musicaId);
 }
