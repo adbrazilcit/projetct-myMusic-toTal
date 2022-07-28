@@ -71,7 +71,7 @@ public class PlaylistRepository implements PlaylistRepositoryPort {
         LOGGER.info("Musica encontrada " + musicaId);
         playlist.get().removeMusicasNaPlaylist(musica.get());
 
-        this.springPlaylistRepository.save(playlist.get());
+        this.springPlaylistRepository.delete(playlist.get());
 
         LOGGER.info("Música removida com sucesso");
     }

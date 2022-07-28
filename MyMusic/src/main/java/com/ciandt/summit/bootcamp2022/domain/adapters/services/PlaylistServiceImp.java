@@ -43,7 +43,7 @@ public class PlaylistServiceImp implements PlaylistServicePort {
     @Override
     public void addMusicInPlaylist(String playlistId, String musicaId) {
         Playlist playlist = playlistRepositoryPort.findById(playlistId);
-        Musica musica = musicaServicePort.findMusicById(musicaId).toMusic();
+
 
         if (playlist == null) {
             throw new NotFoundException("Playlist não encontrada!");
