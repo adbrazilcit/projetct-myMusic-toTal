@@ -1,5 +1,6 @@
 package com.ciandt.summit.bootcamp2022.infrastructure.adapters.entities;
 
+import com.ciandt.summit.bootcamp2022.applications.adapters.controllers.exception.MusicDetachedException;
 import com.ciandt.summit.bootcamp2022.domain.Playlist;
 
 import javax.persistence.*;
@@ -44,8 +45,11 @@ public class PlaylistEntity {
     public void adicionaMusicasNaPlaylist(MusicaEntity musica) {
         this.musicas.add(musica);
     }
-    public void removeMusicasNaPlaylist(MusicaEntity musica) {
-        this.musicas.remove(musica);
 
+    public void removeMusicasNaPlaylist(MusicaEntity musica) {
+        if(this.musicas.contains(musica)){
+            this.musicas.remove(musica);
+        }else
+            throw new MusicDetachedException("Música não tem vínculo com a playlist");
     }
 }

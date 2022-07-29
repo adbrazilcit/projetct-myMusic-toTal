@@ -57,5 +57,14 @@ public class ExceptionService extends ResponseEntityExceptionHandler {
         return new ResponseEntity(errorResponse, HttpStatus.UNAUTHORIZED);
     }
 
+    @ExceptionHandler()
+    public ResponseEntity<MusicDetachedException> notFoundMusic(MusicDetachedException e) {
+        errorResponse.setStatus(HttpStatus.BAD_REQUEST.value());
+        errorResponse.setMessage(e.getMessage());
+
+        return new ResponseEntity(errorResponse, HttpStatus.BAD_REQUEST);
+    }
+
+
 
 }
