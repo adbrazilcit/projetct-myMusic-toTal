@@ -3,6 +3,7 @@ package com.ciandt.summit.bootcamp2022.domain.adapters.services;
 import com.ciandt.summit.bootcamp2022.domain.Artista;
 import com.ciandt.summit.bootcamp2022.domain.Musica;
 import com.ciandt.summit.bootcamp2022.domain.Playlist;
+import com.ciandt.summit.bootcamp2022.domain.exceptions.BadRequestException;
 import com.ciandt.summit.bootcamp2022.domain.exceptions.NotFoundException;
 import com.ciandt.summit.bootcamp2022.domain.ports.interfaces.MusicaServicePort;
 import com.ciandt.summit.bootcamp2022.domain.ports.interfaces.PlaylistServicePort;
@@ -22,7 +23,6 @@ import java.util.ArrayList;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.BDDMockito.willDoNothing;
 import static org.mockito.Mockito.when;
 
@@ -127,38 +127,38 @@ public class PlaylistServiceImpTest {
         assertThat(playlist.getId()).isNotEmpty();
     }
 
-
     @Test
     @DisplayName("Deleta a música da playlist")
     public  void  deleteMusicWhenMusicAndPlaylistIsValid(){
         Playlist playlistMock = new Playlist();
+        playlistMock.setId("654bbc71-3a9c-4434-a95d-4208f713e586");
 
-        Mockito.when(repository.findById("654bbc71-3a9c-4434-a95d-4208f713e586")).thenReturn(
+        Musica musica = createMusica();
+
+        when(musicaServicePort.findMusicById(musica.getId())).thenReturn(musica.toMusicaDTO());
+
+        Mockito.when(repository.findById(playlistMock.getId())).thenReturn(
                 playlistMock
         );
 
-        this.service.removeMusicFromPlaylist("654bbc71-3a9c-4434-a95d-4208f713e586","4aa583c9-40ee-4dea-927d-006637a1efcf");
+        this.service.removeMusicFromPlaylist(playlistMock.getId(), musica.getId());
 
-        Mockito.verify(repository,Mockito.times(1)).delete("654bbc71-3a9c-4434-a95d-4208f713e586","4aa583c9-40ee-4dea-927d-006637a1efcf");
+        Mockito.verify(repository,Mockito.times(1)).delete(playlistMock.getId(), musica.getId());
     }
-
 
     @Test
     @DisplayName("Ao tentar deletar deve lançar a  exceção porque a playlist é inválida")
     public  void  ThrowExceptionWhenPlaylistIsInvalid(){
+        Playlist playlistMock = new Playlist();
+        playlistMock.setId("123");
 
-        Playlist playlistMock = null;
+        Musica musica = createMusica();
 
-        Mockito.when(repository.findById("654bbc71-3a9c-4434-a95d-4208f713e586")).thenReturn(
-                playlistMock
-        );
+        when(musicaServicePort.findMusicById(musica.getId())).thenReturn(musica.toMusicaDTO());
 
-        try {
-            this.service.removeMusicFromPlaylist("654bbc71-3a9c-4434-a95d-4208f713e586", "4aa583c9-40ee-4dea-927d-006637a1efcf");
-        }catch (Throwable e){
-            assertEquals("Playlist não encontrada!", e.getMessage());
-            assertEquals(NotFoundException.class, e.getClass());
-        }
+        Throwable exception = assertThrows(BadRequestException.class, () -> this.service.removeMusicFromPlaylist(playlistMock.getId(), musica.getId()));
 
+        assertEquals("Playlist não encontrada!", exception.getMessage());
+        assertEquals(BadRequestException.class, exception.getClass());
     }
 }

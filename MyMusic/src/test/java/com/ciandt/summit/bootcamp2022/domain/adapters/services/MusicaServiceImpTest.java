@@ -32,7 +32,6 @@ public class MusicaServiceImpTest {
     @MockBean
     private MusicaRepositoryPort repository;
 
-
     public Musica createMusica() {
         Musica musica = new Musica();
         musica.setId("25e9839b-0d17-480c-a0ae-36a54fea2c30");
@@ -98,7 +97,6 @@ public class MusicaServiceImpTest {
         assertNotEquals(2, musicaBuscadas.size());
     }
 
-
     @Test
     @DisplayName("Deve lançar uma exceção quando a música buscada não for encontrada")
     public void findMusicByFilterNoMatcher() {
@@ -116,7 +114,6 @@ public class MusicaServiceImpTest {
             assertEquals(NotFoundException.class, e.getClass());
         }
     }
-
 
     @Test
     @DisplayName("Deve trazer todas músicas presentes no banco")

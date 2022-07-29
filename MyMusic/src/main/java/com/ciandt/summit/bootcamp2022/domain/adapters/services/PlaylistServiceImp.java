@@ -57,7 +57,6 @@ public class PlaylistServiceImp implements PlaylistServicePort {
         Musica musica = musicaServicePort.findMusicById(musicaId).toMusic();
         Playlist playlist = playlistRepositoryPort.findById(playlistId);
 
-
         if (playlist == null) {
             throw new BadRequestException("Playlist não encontrada!");
         } else if (musica == null) {
@@ -65,7 +64,5 @@ public class PlaylistServiceImp implements PlaylistServicePort {
         }
 
         playlistRepositoryPort.delete(playlistId, musicaId);
-
     }
-
 }
