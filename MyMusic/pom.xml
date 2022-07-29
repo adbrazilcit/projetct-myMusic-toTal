@@ -93,7 +93,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>${parent.version}</version>
+                <version>${project.parent.version}</version>
                 <executions>
                     <execution>
                         <goals>
@@ -128,8 +128,9 @@
                 </executions>
                 <configuration>
                     <excludes>
-                        <exclude>com.ciandt.summit.bootcamp2022.config</exclude>
-                        <exclude>com.ciandt.summit.bootcamp2022.infrastructure.adapters.entities</exclude>
+                        <exclude>com/ciandt/summit/bootcamp2022/config/**</exclude>
+                        <exclude>com/ciandt/summit/bootcamp2022/infrastructure/adapters/entities/**</exclude>
+                        <exclude>com/ciandt/summit/bootcamp2022/infrastructure/adapters/repository/**</exclude>
                     </excludes>
                 </configuration>
             </plugin>
